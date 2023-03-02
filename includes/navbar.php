@@ -11,10 +11,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="">About us</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -22,8 +22,8 @@
                         Ctaegories
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="poojaitem.php">Pooja Items</a></li>
-                        <li><a class="dropdown-item" href="#">Book Pooja</a></li>
+                        <li><a class="dropdown-item" href="">Pooja Items</a></li>
+                        <li><a class="dropdown-item" href="Bookpooja.php">Book Pooja</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
