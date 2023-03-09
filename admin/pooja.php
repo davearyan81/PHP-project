@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("includes/headers.php");
+include("includes/header.php");
 include("config/dbcon.php");
 ?>
 <div class="container-fluid px-4">
@@ -13,7 +13,7 @@ include("config/dbcon.php");
     <div class="row">
         <div class="col-md-12 mt-5">
             <div class="card">
-                <?php include("message.php"); ?>
+                <?php include("../poojari/message.php"); ?>
                 <div class="card-header">
                     <h3>Pooja Service</h3>
                     <div class="d-md-flex justify-content-md-end">
@@ -42,7 +42,7 @@ include("config/dbcon.php");
                             $time = $row['approxtime'];
                             $req = $row['poojareq'];
                             $img = "img/" . $row['poojaimg'];
-                            $pdf = "pdfs/" . $row['poojareq'];
+                            $pdf = "<a href='pdfs/$req' target='_blank'><i class='fa-solid fa-file-pdf fa-2x'></i></a>";
                             ?>
                             <tr>
                                 <td>
@@ -54,8 +54,7 @@ include("config/dbcon.php");
                                     <?php echo $time ?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo $pdf; ?>" target="_blank"><i
-                                            class="fa-sharp fa-solid fa-file-pdf fa-2x"></i></a>
+                                    <?php echo $pdf; ?>
                                 </td>
                                 <td>
                                     <?php
@@ -77,7 +76,7 @@ include("config/dbcon.php");
         </div>
 
     </div>
-    <?php
-    include("includes/footer.php");
-    include("includes/scripts.php");
-    ?>
+</div>
+<?php
+include("includes/footer.php");
+?>

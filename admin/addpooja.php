@@ -1,19 +1,18 @@
 <?php
-session_start();
-include("includes/headers.php");
+include("includes/header.php");
 include("config/dbcon.php");
 ?>
 <div class="container-fluid px-4">
     <h1 class="mt-4">Dashboard</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active"><a href="index.php" class="text-decoration-none"> Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="pooja.php" class="text-decoration-none"> Pooja</a></li>
         <li class="breadcrumb-item ">Add Pooja</li>
     </ol>
 
     <div class="row">
         <div class="col-md-12 mt-5">
             <div class="card">
-                <?php include("message.php"); ?>
                 <div class="card-header">
                     <h3>Add Pooja</h3>
                 </div>
@@ -21,7 +20,6 @@ include("config/dbcon.php");
 
                 if (isset($_POST['submit'])) {
 
-                    $id = $_POST['poid'];
                     $title = $_POST['potitle'];
                     $desc = $_POST['podesc'];
                     $time = $_POST['potime'];
@@ -36,9 +34,8 @@ include("config/dbcon.php");
                         move_uploaded_file($tmp_img, "img/" . $imgname);
                         move_uploaded_file($tmp_pdf, "pdfs/" . $pdfname);
 
-                        $qry = "INSERT INTO pooja (poojaid,poojatitle,poojaimg,pdesc,approxtime,benefit,poojareq) VALUES ('$id','$title','$imgname','$desc','$time','$ben','$pdfname')";
+                        $qry = "INSERT INTO pooja (poojatitle,poojaimg,pdesc,approxtime,benefit,poojareq) VALUES ('$title','$imgname','$desc','$time','$ben','$pdfname')";
                         $result = $con->query($qry);
-                        echo $result;
                         if ($result) {
                             echo "<script type='text/javascript'>window.top.location='addpooja.php';</script>";
 
@@ -54,11 +51,7 @@ include("config/dbcon.php");
                 ?>
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
-                        <!-- Name input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for="form4Example1">PoojaID</label>
-                            <input type="text" id="form4Example1" class="form-control" name="poid" />
-                        </div>
+
 
                         <!-- Email input -->
                         <div class="form-outline mb-4">
@@ -74,7 +67,7 @@ include("config/dbcon.php");
                         <!--description -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form4Example3">Pooja description</label>
-                            <textarea class="form-control" id="form4Example3" rows="4" name="podesc"></textarea>
+                            <textarea class="form-control" id="summernote" rows="4" name="podesc"></textarea>
                         </div>
                         <!-- Pooja Time -->
                         <div class="form-outline mb-4">
@@ -85,7 +78,7 @@ include("config/dbcon.php");
                         <!-- Pooja Benefit -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form4Example2">Pooja Benefit</label>
-                            <input type="text" id="form4Example2" class="form-control" name="poben" />
+                            <input type="text" id="summernote1" class="form-control" name="poben" />
                         </div>
                         <!-- chosse file -->
                         <div class="form-outline mb-4">
@@ -99,7 +92,7 @@ include("config/dbcon.php");
             </div>
         </div>
     </div>
-    <?php
-    include("includes/footer.php");
-    include("includes/scripts.php");
-    ?>
+</div>
+<?php
+include("includes/footer.php");
+?>

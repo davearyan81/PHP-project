@@ -35,6 +35,7 @@ include('includes/navbar.php');
         <span class="sr-only">Next</span>
     </a>
 </div>
+
 <div class="text-center mb-1">
     <h1 style="color:red">Categories</h1>
 </div>
@@ -461,13 +462,6 @@ include('includes/navbar.php');
     <i class="fa fa-whatsapp fa-x my-float"></i>
 </a>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- owl carousel -->
-<script src="owl_carousel/owl.carousel.js"></script>
-<script src="script.js"></script>
 
 <?php
 include('includes/footer.php');

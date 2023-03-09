@@ -41,9 +41,12 @@
             <!-- Grid row -->
             <div class="row mt-3">
                 <!-- Grid column -->
+
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                     <!-- Content -->
+
                     <img src="image\poojacom new logo.png" alt="Bootstrap" width="300" height="200">
+
                 </div>
                 <!-- Grid column -->
 
@@ -111,7 +114,7 @@
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Pooja.com</a>
+        <a class="text-reset fw-bold" href="index.php">Pooja.com</a>
     </div>
     <!-- Copyright -->
 </footer>

@@ -4,7 +4,7 @@ include('includes/header.php');
 include('includes/navbar.php');
 ?>
 <div class="row p-2 bg-white border rounded mt-2">
-    <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
+    <div class="col-md-3 mt-1 mx-5"><img class="img-fluid img-responsive rounded product-image"
             src="image\Shivji Brass murti.jpg"></div>
     <div class="col-md-6 mt-1">
         <h5>Shiv Bhagwan 3ft tall Murti(Pure Brass)</h5>

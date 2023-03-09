@@ -19,10 +19,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Ctaegories
+                        Categories
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="">Pooja Items</a></li>
+                        <li><a class="dropdown-item" href="categories.php">Pooja Items</a></li>
                         <li><a class="dropdown-item" href="Bookpooja.php">Book Pooja</a></li>
                         <li>
                             <hr class="dropdown-divider">

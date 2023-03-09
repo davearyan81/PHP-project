@@ -1,6 +1,5 @@
 <?php
-session_start();
-include("includes/headers.php");
+include("includes/header.php");
 include("config/dbcon.php");
 ?>
 
@@ -25,22 +24,26 @@ include("config/dbcon.php");
                     $approxTIME = $_POST['txttime'];
                     $beneFIT = $_POST['txtben'];
                     // IMage update
-                    $old_img = $_POST['old_img'];
-                    $new_img = $_FILES['txtimg']['name'];
-                    $tmp_img = $_FILES['txtimg']['tmp_name'];
+                    $old_img=$_POST['old_img'];
+                    $new_img=$_FILES['txtimg']['name'];
+                    $tmp_img=$_FILES['txtimg']['tmp_name'];
                     // pdf update
-                    $old_pdf = $_POST['old_pdf'];
-                    $new_pdf = $_FILES['txtreq']['name'];
-                    $tmp_pdf = $_FILES['txtreq']['tmp_name'];
-                    if ($new_img != '') {
-                        $update_file = $new_img;
-                    } else {
-                        $update_file = $old_img;
+                    $old_pdf=$_POST['old_pdf'];
+                    $new_pdf=$_FILES['txtreq']['name'];
+                    $tmp_pdf=$_FILES['txtreq']['tmp_name'];
+                    if($new_img!='')
+                    {
+                        $update_file=$new_img;
                     }
-                    if ($new_pdf != '') {
-                        $update_pdf = $new_pdf;
-                    } else {
-                        $update_pdf = $old_pdf;
+                    else{
+                        $update_file=$old_img;
+                    }
+                    if($new_pdf!='')
+                    {
+                        $update_pdf=$new_pdf;
+                    }
+                    else{
+                        $update_pdf=$old_pdf;
 
                     }
 
@@ -49,13 +52,15 @@ include("config/dbcon.php");
 
                     if ($result) {
                         // exit;
-                        if ($new_img != '') {
-                            move_uploaded_file($tmp_img, "img/" . $new_img);
-                            unlink("img/" . $old_img);
-                        }
-                        if ($new_pdf != '') {
-                            move_uploaded_file($tmp_pdf, "pdfs/" . $new_pdf);
-                            unlink("pdfs/" . $old_pdf);
+                        if($new_img!='')
+                        {
+                            move_uploaded_file($tmp_img,"img/".$new_img);
+                            unlink("img/".$old_img);
+                        }      
+                        if($new_pdf!='') 
+                        {
+                            move_uploaded_file($tmp_pdf,"pdfs/".$new_pdf);
+                            unlink("pdfs/".$old_pdf);
                         }
                         echo "<script type='text/javascript'>window.top.location='pooja.php';</script>";
                         $_SESSION['message'] = "Susseccfully Edited ";
@@ -90,10 +95,10 @@ include("config/dbcon.php");
                             <input type="text" class="form-control" value="<?php echo $TITLE; ?>" aria-label="Username"
                                 name="txttitle" aria-describedby="basic-addon1">
                         </div>
-                        <input type="text" name="old_img" value="<?php echo $row['poojaimg']; ?>">
+                        <input type="text" name="old_img" value="<?php echo $row['poojaimg'];?>">
                         <div class="input-group mb-3">
                         </div>
-                        <img src="<?php echo 'img/' . $row['poojaimg']; ?>" height="300px" width="200px">
+                        <img src="<?php echo 'img/'.$row['poojaimg'];?>" height="300px" width="200px">
                         <input type="file" class="form-control mb-2" aria-label="Username" name="txtimg"
                             aria-describedby="basic-addon1">
                         <div class="input-group mb-3">
@@ -114,11 +119,11 @@ include("config/dbcon.php");
                             name="txtdesc"><?php echo $BENEFIT; ?>
                                  </textarea>
                     </div>
-                    <input type="text" name="old_pdf" value="<?= $row['poojareq']; ?>">
+                    <input type="text" name="old_pdf" value="<?= $row['poojareq'];?>">
 
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" name="txtreq" aria-label="Username"
-                            aria-describedby="basic-addon1">
+                        <input type="file" class="form-control" name="txtreq"
+                            aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <button type="submit" class="btn btn-primary mb-2" name="submit">Submit</button>
                 </form>
@@ -129,5 +134,4 @@ include("config/dbcon.php");
 </div>
 <?php
 include("includes/footer.php");
-include("includes/scripts.php");
 ?>

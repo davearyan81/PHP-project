@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['message'] = "Email Already Exiist";
             echo "<script type='text/javascript'>window.top.location='userregistration.php';</script>";
         } else {
-            $qry = "INSERT INTO `user`(`fname`, `lname`, `dob`, `gender`,`email`, `password`, `conpassword`, `address`, `states`, `city`,`phnum`) VALUES ('$fname','$lname','$dob','$gen','$email','$pass','$conpass','$address','$state','$city','$phno')";
+            $qry = "INSERT INTO `user`(`fname`, `lname`, `dob`, `gender`,`email`, `password`, `conpassword`, `address`, `states`, `city`,`phnum`,`status`) VALUES ('$fname','$lname','$dob','$gen','$email','$pass','$conpass','$address','$state','$city','$phno','pending')";
             $result1 = $con->query($qry);
             if ($result) {
                 $_SESSION['message'] = "Register Successfully";
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
         }
     } else {
         $_SESSION['message'] = "Confirm Password and Password didn't Match";
-        echo "<script type='text/javascript'>window.top.location='userregistration.php';</script>";
+        // echo "<script type='text/javascript'>window.top.location='userregistration.php';</script>";
     }
 
 }

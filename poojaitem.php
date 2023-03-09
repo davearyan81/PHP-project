@@ -1,5 +1,6 @@
 <?php
 include('includes/header.php');
+include('includes/navbar.php');
 include('admin/config/dbcon.php');
 $qry = "select 	poojatitle,	poojaimg from pooja";
 $result = $con->query($qry);
