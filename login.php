@@ -7,7 +7,7 @@ include('includes/header.php');
 ?>
 <section class="intro">
     <div class="bg-image h-100">
-        <div class="mask d-flex align-items-center h-40"">
+        <div class="mask d-flex align-items-center h-40">
             <div class=" container">
             <?php include("poojari/message.php"); ?>
             <div class="row d-flex justify-content-center align-items-center">
