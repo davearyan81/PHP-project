@@ -22,7 +22,7 @@ include('includes/header.php');
                                 <div class="card-body py-5 px-4 p-md-5">
 
                                     <form action="logincode.php" method="post">
-                                        <h4 class="fw-bold mb-4" style="color:  #d12e11;">Log in
+                                        <h4 class="fw-bold mb-4" style="color:  #d12e11;">Log in into your account
                                         </h4>
                                         <p class="mb-4" style="color: #45526e;">To log in, please fill in these
                                             text fiels with your e-mail address and password.</p>
