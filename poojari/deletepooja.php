@@ -1,17 +1,11 @@
 <?php
 include("config/dbcon.php");
-
-    $id=$_GET['id'];
+if(isset($_POST['name'])){
+    $id=$_POST['btn-id'];
     echo $id;
     $qry="delete from poojapandit where popaid='$id'";
     $result=$con->query($qry);
-    if($result)
-    {
-        header("location:pooja.php");
-    }
-    else{
-        echo "failed";
-    }
+}   
 
 
 ?>

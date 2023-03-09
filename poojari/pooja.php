@@ -49,11 +49,14 @@ if ($_SESSION['auth_id1']) {
                                 <td><img src="<?php echo 'img/' . $row['poojaimg']; ?>" height="300px" width="200px">
                                 </td>
                                 <td>
-                                    <?php echo $row['price'] ?>
+                                    <?php echo $row['price']; ?>
                                 </td>
 
-                                <td><a class="btn btn-danger" href="deletepooja.php?id=<?= $id; ?>" role="button"
-                                        onclick="return mydelete()">Delete</a>
+                                <td>
+                                    <!-- <a class="btn btn-danger" href="deletepooja.php?id="" role="button"
+                                        onclick="return mydelete()">Delete</a> -->
+                                        <button class="btn btn-danger btn-del" name="delete" type="submit"
+                                        value="<?php echo $row['popaid']; ?>">Delete</button>   
                                 </td>
                             </tr>
                         <?php endwhile; ?>

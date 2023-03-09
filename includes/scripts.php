@@ -7,7 +7,9 @@
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<!-- jquery -->
+<script src="https://cdnjs.cloudflarjquery-3.6.4.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 
@@ -17,7 +19,7 @@
     $(document).ready(function () {
         $('#states').change(function () {
             var state_id = this.value;
-            // console.log(state_id);
+            console.log(state_id);
             $.ajax({
                 url: "ajax/city.php",
                 method: "POST",
@@ -41,14 +43,15 @@
                 }
             });
         });
+       
     });
-  <!-- Dependent Cities and states -->
 </script>
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- //   Dependent Cities and states -->
+<!-- Sweetalert -->
+
+<!-- Sweetalert -->
+
+
 
 <!-- owl carousel -->
 <script src="owl_carousel/owl.carousel.js"></script>
