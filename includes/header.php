@@ -13,9 +13,13 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
 
+    <!--=========================== Aos Animation ========================== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="assest/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="assest/css/productpage.css">
     <link rel="stylesheet" href="assest/css/login.css">
     <link rel="stylesheet" href="assest/css/registration.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

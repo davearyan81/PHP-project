@@ -1,4 +1,12 @@
 <!-- Footer -->
+
+<!-- ===========================aos animation ===================== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init();
+</script>
+
 <footer class="text-center mt-auto text-lg-start bg-light text-muted">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">

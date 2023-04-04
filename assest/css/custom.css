@@ -140,7 +140,7 @@ h2 {
 
 /* ===============================poja items============================== */
 
-body {
+/* body {
   background: #eee;
 }
 .ratings i {
@@ -173,56 +173,56 @@ h5 {
 }
 .para {
   font-size: 16px;
-}
+} */
 
 /* ================================================================================================ */
 
-.product-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-}
+/* .product-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
 
-.product-images img {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
+  .product-images img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
 
-.product-images img.active {
-  opacity: 1;
-}
+  .product-images img.active {
+    opacity: 1;
+  }
 
-.product-thumbnails {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
+  .product-thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
 
-.product-thumbnails img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-right: 10px;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.3s ease-in-out;
-}
+  .product-thumbnails img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+  }
 
-.product-thumbnails img:hover {
-  opacity: 1;
-}
+  .product-thumbnails img:hover {
+    opacity: 1;
+  } */
 
 /*============================================================ product page ==========================================  */
-img {
+/* img {
   max-width: 100%;
 }
 
@@ -428,4 +428,4 @@ img {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-}
+} */
