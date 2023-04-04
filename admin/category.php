@@ -1,7 +1,7 @@
 <?php
 include("includes/header.php");
 include("config/dbcon.php");
-// ?>
+?>
 <div class="container-fluid px-4">
     <h3>Pooja Service</h3>
     <ol class="breadcrumb mb-4">
@@ -13,56 +13,43 @@ include("config/dbcon.php");
             <div class="card">
 
                 <div class="card-header">
-                    <h3>Pending Request</h3>
+                    <h3>Category</h3>
                     <div class="d-md-flex justify-content-md-end">
 
-                        <a class="btn btn-primary" href="addpooja.php" role="button">Add User</a>
+                        <a class="btn btn-primary" href="addpooja.php" role="button">Add Category</a>
                     </div>
                 </div>
                 <div class="card-body">
                     <table id="example" class="display responsive nowrap" style="width:100%">
                         <thead>
                             <tr>
-                                <th>PoojaName</th>
-                                <th>PoojaImg</th>
-                                <th>Approxtime</th>
-                                <th>Poojareq</th>
+                                <th>Category Name</th>
+                                <th>Category Image</th>
+                                <th>Offer</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <?php
-                        $qry = "select * from pooja";
+                        $qry = "select * from category";
                         $result = $con->query($qry);
                         while ($row = $result->fetch_assoc()) {
-                            $id = $row['poojaid'];
-                            $title = $row['poojatitle'];
-                            $time = $row['approxtime'];
-                            $req = $row['poojareq'];
-                            $img = "img/" . $row['poojaimg'];
-                            $pdf = "<a href='pdfs/$req' target='_blank'><i class='fa-solid fa-file-pdf fa-2x'></i></a>";
                             ?>
                             <tr>
                                 <td>
-                                    <?php echo $title ?>
+                                    <?= $row['cat_name'] ?>
                                 </td>
-                                <td><img src="<?php echo $img; ?>" height="300px" width="200px">
-                                </td>
-                                <td>
-                                    <?php echo $time ?>
+                                <td><img src="<?= '../image/' . $row['cat_image']; ?>" height="300px" width="200px">
                                 </td>
                                 <td>
-                                    <?php echo $pdf; ?>
+                                    <?= $row['offer']; ?>
                                 </td>
                                 <td>
-                                    <?php
-                                    echo "<a href='edit.php?id=$id'>Edit</a>";
-                                    ?>
+                                    <a class="btn btn-primary" href="catedit.php?id=<?= $row['cat_id']; ?>" role="button">Edit</a>
                                 </td>
                                 <td>
-                                    <?php
-                                    echo "<a href='delete.php?id=$id' onclick='return mydelete()'>Delete</a>";
-                                    ?>
+                                    <button class="btn btn-danger btn-del1" value="<?= $row['cat_id']; ?>"
+                                        type="submit">Delete</button>
                                 </td>
                             </tr>
                         <?php } ?>
