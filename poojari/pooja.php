@@ -1,3 +1,4 @@
+`
 <?php
 session_start();
 include("includes/header.php");
@@ -55,8 +56,8 @@ if ($_SESSION['auth_id1']) {
                                 <td>
                                     <!-- <a class="btn btn-danger" href="deletepooja.php?id="" role="button"
                                         onclick="return mydelete()">Delete</a> -->
-                                        <button class="btn btn-danger btn-del" name="delete" type="submit"
-                                        value="<?php echo $row['popaid']; ?>">Delete</button>   
+                                    <button class="btn btn-danger btn-del" name="delete" type="submit"
+                                        value="<?php echo $row['popaid']; ?>">Delete</button>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
