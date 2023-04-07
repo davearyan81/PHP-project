@@ -6,12 +6,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - POOJA Admin</title>
-<<<<<<< HEAD
-
-    Summernote CSS - CDN Link
-=======
     <!-- Summernote CSS - CDN Link -->
->>>>>>> 6346d8fa1872b6d3af07ef8ef541417bcca367fc
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <!-- //Summernote CSS - CDN Link -->
@@ -19,10 +14,6 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<<<<<<< HEAD
-
-=======
->>>>>>> 6346d8fa1872b6d3af07ef8ef541417bcca367fc
     <!-- DataTables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
@@ -57,7 +48,7 @@
                                 'name': "btn-del1"
                             },
                             success: function (response) {
-                            //    console.log("hello");
+                                //    console.log("hello");
                                 Swal.fire(
                                     'Deleted!',
                                     'Your file has been deleted.',
