@@ -1,3 +1,4 @@
+<script src="assest\js\carousel.js"></script>
 <!-- Footer -->
 
 <!-- ===========================aos animation ===================== -->
