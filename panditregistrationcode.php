@@ -6,7 +6,6 @@ if (isset($_POST['submit'])) {
     $plname = $_POST['txtplname'];
     $pemail = $_POST['txtpemail'];
     $ppass = $_POST['txtppass'];
-    $pconpass = $_POST['txtpconpass'];
     $pdetails = $_POST['txtpdetails'];
     $pphno = $_POST['txtpphno'];
     $pdoj = $_POST['txtpdoj'];
@@ -28,7 +27,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['message'] = "Email Already Exiist";
             echo "<script type='text/javascript'>window.top.location='panditregistration.php';</script>";
         } else {
-            $qry1 = "INSERT INTO `pandit`( `fname`, `lname`, `email`, `password`, `conpassword`, `pdetails`, `phno`, `doj`, `address`, `state`, `city`, `pimage`,`status`) VALUES ('$pfname','$plname','$pemail','$ppass','$pconpass','$pdetails','$pphno','$pdoj','$paddress','$pstate','$pcity','$filename','pending')";
+            $qry1 = "INSERT INTO `pandit`( `fname`, `lname`, `email`, `password`, `pdetails`, `phno`, `doj`, `address`, `state`, `city`, `pimage`,`status`) VALUES ('$pfname','$plname','$pemail','$ppass','$pdetails','$pphno','$pdoj','$paddress','$pstate','$pcity','$filename','pending')";
             $result1 = $con->query($qry1);
 
             if ($result1) {

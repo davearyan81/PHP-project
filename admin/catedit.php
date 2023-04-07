@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
     $result = $con->query($qry);
     if ($result) {
         if ($new_img != '') {
-            move_uploaded_file($new_img_tmp, 'images/' . $new_img);
+            move_uploaded_file($new_img_tmp, '../image/' . $new_img);
             unlink('../image/' . $old_img);
         }
     }
