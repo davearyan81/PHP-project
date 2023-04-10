@@ -46,10 +46,13 @@ if (isset($_GET['id'])) {
                                         </div>
                                         <h6 class="text-success">Free shipping</h6>
                                         <div class="d-flex flex-column mt-4">
-                                            <button class="btn btn-danger btn-sm" type="button">Details</button>
+                                            <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                                                data-mdb-target="#exampleModal">
+                                                Launch demo modal
                                             </button>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
