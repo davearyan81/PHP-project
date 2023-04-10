@@ -6,7 +6,7 @@ include("config/dbcon.php");
     <h3>Pooja Service</h3>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active"><a href="index.php" class="text-decoration-none"> Dashboard</a></li>
-        <li class="breadcrumb-item ">Pooja Service</li>
+        <li class="breadcrumb-item ">Category</li>
     </ol>
     <div class="row">
         <div class="col-md-12 mt-5">
@@ -16,7 +16,7 @@ include("config/dbcon.php");
                     <h3>Category</h3>
                     <div class="d-md-flex justify-content-md-end">
 
-                        <a class="btn btn-primary" href="addpooja.php" role="button">Add Category</a>
+                        <a class="btn btn-primary" href="addcat.php" role="button">Add Category</a>
                     </div>
                 </div>
                 <div class="card-body">
