@@ -28,11 +28,11 @@
                     pid: id
                 },
                 success: function (result) {
-                    // console.log(result);
+                    console.log(result);
                     $('.modal-body').html(result);
                 }
             });
-            $('#exampleModal').show();
+            // $('#exampleModal').show();
         })
         $('#states').change(function () {
             var state_id = this.value;

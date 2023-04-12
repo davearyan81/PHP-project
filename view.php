@@ -72,28 +72,31 @@ if (isset($_POST['pid'])) {
                         </div>
                     </div>
 
-                </div>q
+                </div>
 
             </div>
 
         </div>
+        
+        <form action="cart.php" method="post">
         <div class="m-2">
             <div class="form-outline" style="width: 22rem;">
             <div class="col">
-            Qty:<input type="text" placeholder="Qty" >
+            Qty:<input type="text" value="1" name="txtqty" placeholder="Qty" >
           </div>
             </div>
         </div>
-
+        <input type="hidden" name="txtname" value="'.$row["pname"].'">
+        <input type="hidden" name="txtprice" value="'.$row["pprice"].'">
+        <input type="hidden" name="txtimg" value="'.$row["pimg"].'">
         <button type="button" class="btn btn-outline-danger"
             data-mdb-dismiss="modal">
             Close
         </button>
 
-        </style>
-        <button type="submit" class="btn btn-danger mx-3">Save
-            changes
-        </button>
+            <button type="submit" name="submit" class="btn btn-danger mx-3">Add to Cart
+            </button>
+        </form>
 
     </div>
 </div>
