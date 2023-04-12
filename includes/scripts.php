@@ -20,7 +20,7 @@
     $(document).ready(function () {
         $('.hello').click(function () {
             var id = $(this).val();
-            < !--alert(id); -- >
+            // alert(id); 
             $.ajax({
                 method: 'POST',
                 url: './view.php',
@@ -28,7 +28,7 @@
                     pid: id
                 },
                 success: function (result) {
-
+                    // console.log(result);
                     $('.modal-body').html(result);
                 }
             });
