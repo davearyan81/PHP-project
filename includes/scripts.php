@@ -12,11 +12,28 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Dependent cities and states -->
 
 <script>
     $(document).ready(function () {
+        $('.hello').click(function () {
+            var id = $(this).val();
+            < !--alert(id); -- >
+            $.ajax({
+                method: 'POST',
+                url: './view.php',
+                data: {
+                    pid: id
+                },
+                success: function (result) {
+
+                    $('.modal-body').html(result);
+                }
+            });
+            $('#exampleModal').show();
+        })
         $('#states').change(function () {
             var state_id = this.value;
             console.log(state_id);
@@ -43,7 +60,7 @@
                 }
             });
         });
-       
+
     });
 </script>
 <!-- //   Dependent Cities and states -->
