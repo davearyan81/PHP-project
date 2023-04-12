@@ -38,6 +38,10 @@ body {
   bottom: 0;
 }
 
+.btn .btn-outline-danger {
+  background-color: #d12e11;
+}
+
 .heart-icon {
   position: absolute;
   top: 16px;
