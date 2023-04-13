@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
 
                                         <button type="button" id="" class="btn btn-danger hello" data-mdb-toggle="modal"
                                             value="<?= $row['pid']; ?>" data-mdb-target="#exampleModal">
-                                            Launch demo modal
+                                            View product
                                         </button>
                                         <div class="modal top fade" id="exampleModal" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="false"

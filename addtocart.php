@@ -1,20 +1,17 @@
+<?php session_start();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include("includes/navbar.php") ?>
 
 <head>
     <meta charset="utf-8">
+
+
     <title>shop cart - Bootdey.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
-
     <style type="text/css">
         body {
             margin-top: 20px;
@@ -102,7 +99,7 @@
 
         .shopping-cart .count-input,
         .wishlist-table .count-input,
-        .order-table .count-input {
+        .order-table .count-input{
             display: inline-block;
             width: 100%;
             width: 86px
@@ -244,7 +241,13 @@
                 margin: 12px 0 !important
             }
         }
-
+        #input{
+            width: 86px;
+            border-color: #dbe2e8;
+            border-radius: 20px;
+            padding: 12px 12px;
+            /* margin: 8px 0; */
+        }
         .coupon-form .form-control {
             display: inline-block;
             width: 100%;
@@ -277,117 +280,89 @@
                     <tr>
                         <th>Product Name</th>
                         <th class="text-center">Quantity</th>
-                        <th class="text-center">Subtotal</th>
-                        <th class="text-center">Discount</th>
-                        <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Delete</th>
+                        <th class="text-center">Update</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(isset($_SESSION['cart'])): ?>
+                        <?php foreach($_SESSION['cart'] as $key => $value): ?>
+                            <form action="cart.php" method="post">
                     <tr>
                         <td>
                             <div class="product-item">
                                 <a class="product-thumb" href="#"><img
-                                        src="https://www.bootdey.com/image/220x180/FF0000/000000" alt="Product"></a>
+                                        src="<?='image/'.$value['image'];?>" alt="Product"></a>
                                 <div class="product-info">
-                                    <h4 class="product-title"><a href="#">Unionbay Park</a></h4><span><em>Size:</em>
-                                        10.5</span><span><em>Color:</em> Dark Blue</span>
+                                    <h4 class="product-title"><a href="#"><?= $value['name']; ?></a></h4>
                                 </div>
                             </div>
                         </td>
                         <td class="text-center">
                             <div class="count-input">
-                                <select class="form-control">
+                                <input type="number" id="input" name="txtqty" value="<?= $value['quantity']; ?>">  
+                            <!-- <select class="form-control">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
-                                </select>
+                                </select> -->
                             </div>
                         </td>
-                        <td class="text-center text-lg text-medium">$43.90</td>
-                        <td class="text-center text-lg text-medium">$18.00</td>
-                        <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
-                                data-original-title="Remove item"><i class="fa fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="product-item">
-                                <a class="product-thumb" href="#"><img
-                                        src="https://www.bootdey.com/image/220x180/5F9EA0/000000" alt="Product"></a>
-                                <div class="product-info">
-                                    <h4 class="product-title"><a href="#">Daily Fabric Cap</a></h4><span><em>Size:</em>
-                                        XL</span><span><em>Color:</em> Black</span>
-                                </div>
-                            </div>
+                        <td class="text-center text-lg text-medium"><?= ($value['price']*$value['quantity']); ?></td>
+
+                        <td class="text-center">
+                                <input type="hidden" name="txtname" value="<?= $value['name']; ?>">
+                                <button class="btn btn-round btn-light mt-3" name="remove" type="submit"><i class="fa fa-trash fa-2x"></i></button>                               
                         </td>
                         <td class="text-center">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option selected="">2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td class="text-center text-lg text-medium">$24.89</td>
-                        <td class="text-center">—</td>
-                        <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
-                                data-original-title="Remove item"><i class="fa fa-trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="product-item">
-                                <a class="product-thumb" href="#"><img
-                                        src="https://www.bootdey.com/image/220x180/9932CC/000000" alt="Product"></a>
-                                <div class="product-info">
-                                    <h4 class="product-title"><a href="#">Cole Haan Crossbody</a></h4>
-                                    <span><em>Size:</em> -</span><span><em>Color:</em> Turquoise</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td class="text-center text-lg text-medium">$200.00</td>
-                        <td class="text-center">—</td>
-                        <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
-                                data-original-title="Remove item"><i class="fa fa-trash"></i></a></td>
-                    </tr>
+                                <button class="btn btn-round btn-light mt-3" name="update" type="submit"><i class="fa fa-refresh fa-2x"></i></button>                                                              
+                            </td>
+                        </tr>
+                    </form>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
         <div class="shopping-cart-footer">
-            <div class="column">
-                <form class="coupon-form" method="post">
-                    <input class="form-control form-control-sm" type="text" placeholder="Coupon code" required="">
-                    <button class="btn btn-outline-primary btn-sm" type="submit">Apply Coupon</button>
-                </form>
-            </div>
-            <div class="column text-lg">Subtotal: <span class="text-medium">$289.68</span></div>
+            <?php 
+                $total=0;
+            if(isset($_SESSION['cart'])){
+                foreach($_SESSION['cart'] as $key => $value)
+                {
+                    $total+=$value['quantity']*$value['price'];
+                }
+            }
+            ?>
+            <div class="column text-lg">Subtotal: <span class="text-medium"><svg xmlns="http://www.w3.org/2000/svg" width="15px"
+                    height="15px"
+                    viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z" />
+                </svg><?= $total ?></span></div>
         </div>
         <div class="shopping-cart-footer">
-            <div class="column"><a class="btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back
+            <div class="column"><a class="btn btn-outline-secondary" href="categories.php"><i class="icon-arrow-left"></i>&nbsp;Back
                     to Shopping</a></div>
-            <div class="column"><a class="btn btn-primary" href="#" data-toast="" data-toast-type="success"
-                    data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart"
-                    data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success"
-                    href="#">Checkout</a></div>
+                    
+            <div class="column">
+                <form action="cart.php" method="post">
+                <button class="btn btn-round btn-outline-danger mt-3" name="clear" type="submit">clear cart</button>
+                <button class="btn btn-round btn-success mt-3" name="update" type="submit">Checkout</button>
+                </form>
+            <!-- <a class="btn btn-success"
+                    href="#">Checkout</a> -->
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
 
+    </script>
 </body>
 
 <footer class="text-center mt-auto text-lg-start bg-light text-muted">

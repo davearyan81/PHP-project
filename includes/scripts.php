@@ -32,7 +32,7 @@
                     $('.modal-body').html(result);
                 }
             });
-            $('#exampleModal').show();
+            // $('#exampleModal').show();
         })
         $('#states').change(function () {
             var state_id = this.value;
