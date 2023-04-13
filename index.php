@@ -6,7 +6,6 @@ include('includes/header.php');
 include('includes/navbar.php');
 ?>
 
-
 <!-- Carousel wrapper -->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
