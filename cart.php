@@ -14,8 +14,8 @@ if(isset($_POST['submit']))
         {
             $_SESSION['cart'][]=array(
                 'name' => $_POST['txtname'],
-                'price'=> $_POST['txtprice'],
-                'quantity' => $_POST['txtqty'],
+                'price'=> (int)$_POST['txtprice'],
+                'quantity' => (int)$_POST['txtqty'],
                 'image' => $_POST['txtimg']
             );
             header("location:addtocart.php");
@@ -26,10 +26,11 @@ if(isset($_POST['submit']))
     {
         $_SESSION['cart'][]=array(
             'name' => $_POST['txtname'],
-            'price'=> $_POST['txtprice'],
-            'quantity' => $_POST['txtqty'],
+            'price'=> (int)$_POST['txtprice'],
+            'quantity' => (int)$_POST['txtqty'],
             'image' => $_POST['txtimg']
         );
+        header("location:addtocart.php");
     }
     echo "<pre>";
     print_r($_SESSION['cart']);
@@ -46,5 +47,22 @@ if(isset($_POST['remove']))
             header("location:addtocart.php");
         }
     }
+}
+if(isset($_POST['update']))
+{
+    foreach($_SESSION['cart'] as $key => $value)
+    {
+        if($value['name']==$_POST['txtname'])
+        {
+            $_SESSION['cart'][$key]['quantity']=$_POST['txtqty'];
+            // echo $_SESSION['cart'][$key]['quantity'];
+            header("location:addtocart.php");
+        }
+    }
+}
+if(isset($_POST['clear']))
+{
+    unset($_SESSION['cart']);
+    header("location:addtocart.php");
 }
 ?>

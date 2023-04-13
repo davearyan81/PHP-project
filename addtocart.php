@@ -279,14 +279,16 @@
                 <thead>
                     <tr>
                         <th>Product Name</th>
-                        <th class="text-center">Price</th>
                         <th class="text-center">Quantity</th>
-                        <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Delete</th>
+                        <th class="text-center">Update</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if(isset($_SESSION['cart'])): ?>
                         <?php foreach($_SESSION['cart'] as $key => $value): ?>
+                            <form action="cart.php" method="post">
                     <tr>
                         <td>
                             <div class="product-item">
@@ -297,10 +299,9 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="text-center text-lg text-medium"><?= $value['price']; ?></td>
                         <td class="text-center">
                             <div class="count-input">
-                                <input type="number" id="input" value="<?= $value['quantity']; ?>">  
+                                <input type="number" id="input" name="txtqty" value="<?= $value['quantity']; ?>">  
                             <!-- <select class="form-control">
                                     <option>1</option>
                                     <option>2</option>
@@ -310,34 +311,51 @@
                                 </select> -->
                             </div>
                         </td>
+                        <td class="text-center text-lg text-medium"><?= ($value['price']*$value['quantity']); ?></td>
+
                         <td class="text-center">
-                            <form action="cart.php" method="post">
                                 <input type="hidden" name="txtname" value="<?= $value['name']; ?>">
-                                <button class="btn btn-round btn-danger mt-3" name="remove" type="submit"><i class="fa fa-trash "></i></button>                               
-                            </form>
+                                <button class="btn btn-round btn-light mt-3" name="remove" type="submit"><i class="fa fa-trash fa-2x"></i></button>                               
                         </td>
-                    </tr>
+                        <td class="text-center">
+                                <button class="btn btn-round btn-light mt-3" name="update" type="submit"><i class="fa fa-refresh fa-2x"></i></button>                                                              
+                            </td>
+                        </tr>
+                    </form>
                     <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
             </table>
         </div>
         <div class="shopping-cart-footer">
-            <div class="column">
-                <form class="coupon-form" method="post">
-                    <input class="form-control form-control-sm" type="text" placeholder="Coupon code" required="">
-                    <button class="btn btn-outline-primary btn-sm" type="submit">Apply Coupon</button>
-                </form>
-            </div>
-            <div class="column text-lg">Subtotal: <span class="text-medium">$289.68</span></div>
+            <?php 
+                $total=0;
+            if(isset($_SESSION['cart'])){
+                foreach($_SESSION['cart'] as $key => $value)
+                {
+                    $total+=$value['quantity']*$value['price'];
+                }
+            }
+            ?>
+            <div class="column text-lg">Subtotal: <span class="text-medium"><svg xmlns="http://www.w3.org/2000/svg" width="15px"
+                    height="15px"
+                    viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z" />
+                </svg><?= $total ?></span></div>
         </div>
         <div class="shopping-cart-footer">
             <div class="column"><a class="btn btn-outline-secondary" href="categories.php"><i class="icon-arrow-left"></i>&nbsp;Back
                     to Shopping</a></div>
-            <div class="column"><a class="btn btn-primary" href="#" data-toast="" data-toast-type="success"
-                    data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart"
-                    data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success"
-                    href="#">Checkout</a></div>
+                    
+            <div class="column">
+                <form action="cart.php" method="post">
+                <button class="btn btn-round btn-outline-danger mt-3" name="clear" type="submit">clear cart</button>
+                <button class="btn btn-round btn-success mt-3" name="update" type="submit">Checkout</button>
+                </form>
+            <!-- <a class="btn btn-success"
+                    href="#">Checkout</a> -->
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
