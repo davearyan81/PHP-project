@@ -90,16 +90,16 @@ include("admin/config/dbcon.php");
 
                     <div class="mb-3">
                         <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
                         <div class="invalid-feedback">
-                            Please enter a valid email address for shipping updates.
+                            Your username is required.
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="address">Address</label>
                         <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback mb-2">
                             Please enter your shipping address.
                         </div>
                     </div>
@@ -107,6 +107,7 @@ include("admin/config/dbcon.php");
                     <div class="mb-3">
                         <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
                         <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+
                     </div>
                     <?php
                     $qry = "select * from states";
@@ -121,15 +122,15 @@ include("admin/config/dbcon.php");
                                     <option value="<?= $row['id'] ?>"><?= $row['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
-                            <div class="invalid-feedback">
+                            <div class=" invalid-feedback mb-5">
                                 Please select a valid country.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="city">State</label>
+                            <label for="city1">City</label>
                             <select class="custom-select d-block w-100" id="city" required="">
                                 <option value="">Choose...</option>
-                                <option>California</option>
+
                             </select>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
@@ -174,5 +175,35 @@ include("admin/config/dbcon.php");
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>nt.getElementsByClassName('needs-validation');
+
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function (form) {
+    form.addEventListener('submit', function (event) {
+    if (form.checkValidity() === false) {
+    event.pr
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict';
+
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = documeeventDefault();
+                    event.stopPropagation();
+                }
+                            form.classList.add('was-validated');
+            }, false);
+                    });
+                }, false);
+            }) ();
+    </script>
+
     <?php include("includes/scripts.php") ?>
 </body>

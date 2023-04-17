@@ -303,7 +303,7 @@
                 <tbody>
                     <?php if(isset($_SESSION['cart'])): ?>
                         <?php foreach($_SESSION['cart'] as $key => $value): ?>
-                            <form action="cart.php" method="post">
+                    <form action="cart.php" method="post">
                     <tr>
                         <td>
                             <div class="product-item">
