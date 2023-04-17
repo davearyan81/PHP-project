@@ -34,18 +34,18 @@
             });
             // $('#exampleModal').show();
         });
-        $('.custom-select').change(function () {
-            var id = $(this).val();
-            <!-- alert(id); -->
-            $.ajax({
-                method: "POST",
-                url: "ajax/city.php",
-                data: { state_id: id },
-                success: function (result) {
-                    $('#city').html(result);
-                }
-            });
-        });
+        // $('.custom-select').change(function () {
+        //     var id = $(this).val();
+        //     <!-- alert(id); -->
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "ajax/city.php",
+        //         data: { state_id: id },
+        //         success: function (result) {
+        //             $('#city').html(result);
+        //         }
+        //     });
+        // });
         $('#states').change(function () {
             var state_id = this.value;
             console.log(state_id);

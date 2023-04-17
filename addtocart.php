@@ -333,6 +333,7 @@
                                 <button class="btn btn-round btn-light mt-3" name="remove" type="submit"><i class="fa fa-trash fa-2x"></i></button>                               
                         </td>
                         <td class="text-center">
+                            
                                 <button class="btn btn-round btn-light mt-3" name="update" type="submit"><i class="fa fa-refresh fa-2x"></i></button>                                                              
                             </td>
                         </tr>
