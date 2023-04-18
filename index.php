@@ -86,12 +86,10 @@ include('includes/navbar.php');
                             </div>
                         </div>
                         <!--end col-->
-
                     </div>
                     <!--end row-->
                 </div>
                 <!--end col-->
-
                 <div class="col-lg-6 col-md-6 col-6">
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
