@@ -20,6 +20,7 @@ $result = $con->query($qry);
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/29a66b8514.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -45,12 +46,12 @@ $result = $con->query($qry);
                   <div class="owl-item cloned" style="width: 350px; margin-right: 30px">
                     <div class="single_course">
                       <div class="course_head">
-                        <img class="img-fluid" src="<?= 'image/' . $row['pimage']; ?>" alt="" />
+                        <a href="pills.php?id=<?= $row['pid'] ?>"><img class="img-fluid" src="<?= 'image/' . $row['pimage']; ?>" alt="" /></a>
                       </div>
                       <div class="course_content">
                         <span class="tag mb-4 d-inline-block">Pandit</span>
                         <h4 class="mb-3">
-                          <a href="#">
+                          <a href="pills.php?id=<?= $row['pid'] ?>">
                             <?= $row['fname'] . " " . $row['lname']; ?>
                           </a>
                         </h4>
@@ -61,9 +62,10 @@ $result = $con->query($qry);
                         <div
                           class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                           <div class="authr_meta">
-                            <img src="<?= 'image/' . $row['pimage']; ?>" alt="" />
-                            <span class=" d-inline-block ml-2">
-                              <?= $row['fname'] . " " . $row['lname']; ?>
+                            <i class="fa fa-envelope fa-duotone fa-shake fa-2x"
+                              style="--fa-primary-color: #d12e11; --fa-secondary-color: #e25050;"></i>
+                            <span class=" d-inline-block">
+                              <?= $row['email'] ?>
                             </span>
                           </div>
 
