@@ -1,83 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@800&family=Sansita:wght@700&display=swap");
 
-html {
-  scroll-behavior: smooth;
-}
-body {
-  background: rgb(255, 253, 253);
-  overflow-x: hidden;
-  font-family: "Poppins", sans-serif;
-}
-.product-item {
-  border: 1px solid rgb(219, 219, 219);
-}
-.product-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.btns {
-  position: absolute;
-  left: 0;
-  bottom: -100%;
-  font-size: 15px;
-  font-weight: 300;
-  transition: all 0.3s ease-in-out;
-}
-.btns button {
-  border: none;
-  background-color: rgb(39, 39, 39);
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-.btns button:hover {
-  color: #e87b5d;
-}
-.product-img:hover .btns {
-  bottom: 0;
-}
-
-.btn .btn-outline-danger {
-  background-color: #d12e11;
-}
-
-.heart-icon {
-  position: absolute;
-  top: 16px;
-  right: 15px;
-  font-size: 18px;
-}
-
-.product-type {
-  font-size: 13px;
-  opacity: 0.8;
-}
-.product-name {
-  transition: all 0.3s ease-in-out;
-}
-.product-name:hover {
-  color: #de513b !important;
-}
-.product-price {
-  color: #d12e11;
-}
-.rating {
-  font-size: 13px;
-}
-.product-item {
-  width: 300px;
-}
-
-div a img {
-  width: 83px;
-  height: 50px;
-}
-.carousel-item {
-  height: 100vh;
-  min-height: 300px;
-}
-
 h1 {
   font-family: Sansita;
   color: #d12e11;
@@ -88,39 +11,6 @@ h1 {
 }
 
 /*=============================================== whatsapp logo ==================================*/
-.float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 20px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100;
-}
-
-.my-float {
-  margin-top: 16px;
-}
-
-/*  testimonial part */
-
-.card {
-  border: 2px solid red;
-}
-
-.user-content p {
-  margin-top: 5px;
-  font-size: 12px;
-}
-
-.ratings i {
-  color: blue;
-}
 
 /* ================ css for pandit card============================== */
 
@@ -138,9 +28,9 @@ h1 {
   border-radius: 50%;
 }
 
-h2 {
+/* h2 {
   color: #d12e11;
-}
+} */
 
 /* ===============================poja items============================== */
 

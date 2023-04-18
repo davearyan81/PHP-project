@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
 
 <?php include("includes/header.php") ?>
 <?php include("includes/navbar.php") ?>
@@ -11,22 +10,9 @@
 
     <title>shop cart - Bootdey.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Font Awesome -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
-  rel="stylesheet"
-/>
+    <!--  -->
     <style type="text/css">
         body {
             margin-top: 20px;
@@ -114,7 +100,7 @@
 
         .shopping-cart .count-input,
         .wishlist-table .count-input,
-        .order-table .count-input{
+        .order-table .count-input {
             display: inline-block;
             width: 100%;
             width: 86px
@@ -256,13 +242,15 @@
                 margin: 12px 0 !important
             }
         }
-        #input{
+
+        #input {
             width: 86px;
             border-color: #dbe2e8;
             border-radius: 20px;
             padding: 12px 12px;
             /* margin: 8px 0; */
         }
+
         .coupon-form .form-control {
             display: inline-block;
             width: 100%;
@@ -301,203 +289,212 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(isset($_SESSION['cart'])): ?>
-                        <?php foreach($_SESSION['cart'] as $key => $value): ?>
-                    <form action="cart.php" method="post">
-                    <tr>
-                        <td>
-                            <div class="product-item">
-                                <a class="product-thumb" href="#"><img
-                                        src="<?='image/'.$value['image'];?>" alt="Product"></a>
-                                <div class="product-info">
-                                    <h4 class="product-title"><a href="#"><?= $value['name']; ?></a></h4>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <div class="count-input">
-                                <input type="number" id="input" name="txtqty" value="<?= $value['quantity']; ?>">  
-                            <!-- <select class="form-control">
+                    <?php if (isset($_SESSION['cart'])): ?>
+                        <?php foreach ($_SESSION['cart'] as $key => $value): ?>
+                            <form action="cart.php" method="post">
+                                <tr>
+                                    <td>
+                                        <div class="product-item" style="1px solid red">
+                                            <a class="product-thumb" href="#"><img clase="img1 "
+                                                    src="<?= 'image/' . $value['image']; ?>" alt="Product"></a>
+                                            <div class="product-info">
+                                                <h4 class="product-title"><a href="#">
+                                                        <?= $value['name']; ?>
+                                                    </a></h4>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="count-input">
+                                            <input type="number" id="input" name="txtqty" value="<?= $value['quantity']; ?>">
+                                            <!-- <select class="form-control">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
                                 </select> -->
-                            </div>
-                        </td>
-                        <td class="text-center text-lg text-medium"><?= ($value['price']*$value['quantity']); ?></td>
+                                        </div>
+                                    </td>
+                                    <td class="text-center text-lg text-medium">
+                                        <?= ($value['price'] * $value['quantity']); ?>
+                                    </td>
 
-                        <td class="text-center">
-                                <input type="hidden" name="txtname" value="<?= $value['name']; ?>">
-                                <button class="btn btn-round btn-light mt-3" name="remove" type="submit"><i class="fa fa-trash fa-2x"></i></button>                               
-                        </td>
-                        <td class="text-center">
-                            
-                                <button class="btn btn-round btn-light mt-3" name="update" type="submit"><i class="fa fa-refresh fa-2x"></i></button>                                                              
-                            </td>
-                        </tr>
-                    </form>
-                    <?php endforeach; ?>
+                                    <td class="text-center">
+                                        <input type="hidden" name="txtname" value="<?= $value['name']; ?>">
+                                        <button class="btn btn-round btn-light mt-3" name="remove" type="submit"><i
+                                                class="fa fa-trash fa-2x"></i></button>
+                                    </td>
+                                    <td class="text-center">
+
+                                        <button class="btn btn-round btn-light mt-3" name="update" type="submit"><i
+                                                class="fa fa-refresh fa-2x"></i></button>
+                                    </td>
+                                </tr>
+                            </form>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
             </table>
         </div>
         <div class="shopping-cart-footer">
-            <?php 
-                $total=0;
-            if(isset($_SESSION['cart'])){
-                foreach($_SESSION['cart'] as $key => $value)
-                {
-                    $total+=$value['quantity']*$value['price'];
+            <?php
+            $total = 0;
+            if (isset($_SESSION['cart'])) {
+                foreach ($_SESSION['cart'] as $key => $value) {
+                    $total += $value['quantity'] * $value['price'];
                 }
             }
             ?>
-            <div class="column text-lg">Subtotal: <span class="text-medium"><svg xmlns="http://www.w3.org/2000/svg" width="15px"
-                    height="15px"
-                    viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                        d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z" />
-                </svg><?= $total ?></span></div>
+            <div class="column text-lg">Subtotal: <span class="text-medium"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="15px" height="15px"
+                        viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z" />
+                    </svg>
+                    <?= $total ?>
+                </span></div>
         </div>
         <div class="shopping-cart-footer">
-            <div class="column"><a class="btn btn-outline-secondary" href="categories.php"><i class="icon-arrow-left"></i>&nbsp;Back
+            <div class="column"><a class="btn btn-outline-secondary" href="categories.php"><i
+                        class="icon-arrow-left"></i>&nbsp;Back
                     to Shopping</a></div>
-                    
+
             <div class="column">
                 <form action="cart.php" method="post">
                     <button class="btn btn-round btn-outline-danger mt-3" name="clear" type="submit">clear cart</button>
-                    <button class="btn btn-round btn-success mt-3" name="update" type="submit">Checkout</button>
+                    <a class="btn btn-round btn-success mt-3" href="checkout.php" role="button">Checkout</a>
                 </form>
+                <!-- <button class="" name="update" type="submit">Checkout</button> -->
                 <!-- <a class="btn btn-success"
                     href="#">Checkout</a> -->
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
-    </body>
-    
-<footer class="text-center mt-auto text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <!-- Left -->
-        <div class="me-5 d-none d-lg-block">
-            <span>Get connected with us on social networks:</span>
-        </div>
-        <!-- Left -->
-
-        <!-- Right -->
-        <div>
-            <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
-                href="https://www.instagram.com/" role="button">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
-                href="https://twitter.com/?lang=en" role="button">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
-            href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C550525804944%7Cb%7Cfacebook%20%27%7C&placement=&creative=550525804944&keyword=facebook%20%27&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696220912%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-327195741349%26loc_physical_ms%3D9050486%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQiAgOefBhDgARIsAMhqXA4e2WMuIoXxvQ4VamMozKaagXezxjybGX8wsKe9FKE1Umf4N-B5SE0aAtMhEALw_wcB"
-            role="button">
-            <i class="fab fa-facebook"></i>
-        </a>
-        
-        <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
-        href="https://in.pinterest.com/" role="button">
-        <i class="fab fa-pinterest"></i>
-    </a>
-    
-</div>
-<!-- Right -->
-</section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-        <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-                <!-- Grid column -->
-
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <!-- Content -->
-
-                    <img src="image\poojacom new logo.png" alt="Bootstrap" width="300" height="200">
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Products
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Pooja Thali</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Murti</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Pooja Temple</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Pooja Decoration</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Useful links
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Settings</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Orders</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Help</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                    <p>
-                        <i class="fas fa-envelope me-3"></i>
-                        <a href="" class="">Pooja.co@gmail.com</a>
-                    </p>
-                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                </div>
-                <!-- Grid column -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script> -->
+    <footer class="text-center mt-auto text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
             </div>
-            <!-- Grid row -->
-        </div>
-    </section>
-    <!-- Section: Links  -->
+            <!-- Left -->
 
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2021 Copyright:
-        <a class="text-reset fw-bold" href="index.php">Pooja.com</a>
-    </div>
-    <!-- MDB -->
-</footer>
-<!-- Footer -->
+            <!-- Right -->
+            <div>
+                <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
+                    href="https://www.instagram.com/" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
+                    href="https://twitter.com/?lang=en" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
+                    href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C550525804944%7Cb%7Cfacebook%20%27%7C&placement=&creative=550525804944&keyword=facebook%20%27&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696220912%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-327195741349%26loc_physical_ms%3D9050486%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQiAgOefBhDgARIsAMhqXA4e2WMuIoXxvQ4VamMozKaagXezxjybGX8wsKe9FKE1Umf4N-B5SE0aAtMhEALw_wcB"
+                    role="button">
+                    <i class="fab fa-facebook"></i>
+                </a>
+
+                <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"
+                    href="https://in.pinterest.com/" role="button">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+
+                        <img src="image\poojacom new logo.png" alt="Bootstrap" width="300" height="200">
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pooja Thali</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Murti</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Pooja Temple</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Pooja Decoration</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            <a href="" class="">Pooja.co@gmail.com</a>
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="index.php">Pooja.com</a>
+        </div>
+        <!-- MDB -->
+    </footer>
+    <!-- Footer -->
+    <?php include("includes/scripts.php"); ?>
+</body>
 
 </html>
