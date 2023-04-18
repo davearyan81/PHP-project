@@ -28,7 +28,7 @@ $result = $con->query($qry);
       <div class="row justify-content-center">
         <div class="col-lg-5">
           <div class="main_title">
-            <h2 class="mb-3">Our Pandit</h2>
+            <h1 class="mb-3 text-center">Our Pandit</12>
           </div>
         </div>
       </div>
