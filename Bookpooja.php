@@ -31,9 +31,9 @@ $result = $con->query($qry);
                             <h4 class="mr-1">Rs:2,000/-</h4><span class="strike-text">Rs:3,000/-</span>
                         </div>
                         <h6 class="text-success">Free shipping</h6>
-                        <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button"
-                                style="background:#d12e11;">Order Now</button><button
-                                class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button>
+                        <div class="d-flex flex-column mt-4">
+                            <a href="pan.php" class="btn btn-primary btn-sm" id="modal" data-mdb-toggle="modal" data-mdb-target="#exampleModal" type="button"
+                                style="background:#d12e11;">Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -41,8 +41,32 @@ $result = $con->query($qry);
         </div>
     </div>
 </div>
+<div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="true">
+  <div class="modal-dialog modal-lg  modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <?php
 include('includes/footer.php');
 include('includes/scripts.php');
 ?>
+<script>
+    $(document).ready(function () {
+        $("#modal").click(function (e) { 
+            // $("#exampleModal").modal("toogle");
+        });
+    }); 
+</script>
