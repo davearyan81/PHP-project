@@ -39,10 +39,6 @@ $result = $con->query($qry);
                             <a href="bookingdetails.php?id=<?= $row['poojaid'] ?>" class="btn btn-primary btn-sm"
                                 type="submit" name="order" style="background:#d12e11;">Order
                                 Now</a>
-                            <button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button>
-                        <div class="d-flex flex-column mt-4">
-                            <a href="pan.php" class="btn btn-primary btn-sm" id="modal" data-mdb-toggle="modal" data-mdb-target="#exampleModal" type="button"
-                                style="background:#d12e11;">Order Now</a>
                         </div>
 
                     </div>
