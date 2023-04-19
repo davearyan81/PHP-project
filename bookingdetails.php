@@ -60,8 +60,11 @@ $row = $result->fetch_assoc();
                                     </svg>
                                                     <?= $row['pprice'] ?>
                                                 </strong></span><br><br>
-
                                 </div>
+                                
+                                <a href="bookingdetails.php?id=<?= $row['poojaid'] ?>" class="btn btn-primary btn-sm"
+                                    type="submit" name="order" style="background:#d12e11;">Order
+                                    Now</a>
                             </div>
                         </div>
                         <!-- Pills navs -->
@@ -97,7 +100,6 @@ $row = $result->fetch_assoc();
                                     Puja Requriment :
                                     <?php 
                                         echo "<a href='admin/pdfs/$row[poojareq]' download>download</a>";
-                                     
                                     ?>
                                 </div>
                             </div>
