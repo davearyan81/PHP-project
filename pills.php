@@ -16,7 +16,14 @@ $result = $con->query($qry);
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
-
+    <style>
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    --mdb-nav-pills-link-active-bg: red;
+    --mdb-nav-pills-link-active-color: white;
+    background-color: var(--mdb-nav-pills-link-active-bg);
+    color: var(--mdb-nav-pills-link-active-color);
+}
+</style>
 </head>
 
 

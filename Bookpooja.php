@@ -1,7 +1,7 @@
 <?php
 include('includes/header.php');
 include('admin/config/dbcon.php');
-$qry = "select 	poojatitle,	poojaimg from pooja";
+$qry = "select * from pooja";
 $result = $con->query($qry);
 ?>
 <div class="container mt-5 mb-5">
@@ -14,6 +14,7 @@ $result = $con->query($qry);
                     <div class="col-md-6 mt-5">
                         <h5>
                             <?= $row['poojatitle']; ?>
+
                         </h5>
                         <div class="d-flex flex-row">
                             <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -28,13 +29,19 @@ $result = $con->query($qry);
 
                     <div class="align-items-center align-content-center col-md-3 border-left mt-5">
                         <div class="d-flex flex-row align-items-center">
-                            <h4 class="mr-1">Rs:2,000/-</h4><span class="strike-text">Rs:3,000/-</span>
+                            <h4 class="mr-1">Rs:
+                                <?= $row['pprice'] ?>/-
+                            </h4>
                         </div>
                         <h6 class="text-success">Free shipping</h6>
-                        <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button"
-                                style="background:#d12e11;">Order Now</button><button
-                                class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button>
+
+                        <div class="d-flex flex-column mt-4">
+                            <a href="bookingdetails.php?id=<?= $row['poojaid'] ?>" class="btn btn-primary btn-sm"
+                                type="submit" name="order" style="background:#d12e11;">Order
+                                Now</a>
+                            <button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button>
                         </div>
+
                     </div>
                 </div>
             <?php endwhile; ?>

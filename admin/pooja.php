@@ -16,7 +16,7 @@ include("config/dbcon.php");
                     <h3>Pending Request</h3>
                     <div class="d-md-flex justify-content-md-end">
 
-                        <a class="btn btn-primary" href="addpooja.php" role="button">Add User</a>
+                        <a class="btn btn-primary" href="addpooja.php" role="button">Add Pooja</a>
                     </div>
                 </div>
                 <div class="card-body">
