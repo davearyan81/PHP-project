@@ -24,6 +24,7 @@ include("config/dbcon.php");
                     $desc = $_POST['podesc'];
                     $time = $_POST['potime'];
                     $ben = $_POST['poben'];
+                    $price = $_POST['txtprice'];
                     // Image upload
                     $imgname = $_FILES['poimg']['name'];
                     $tmp_img = $_FILES['poimg']['tmp_name'];
@@ -34,7 +35,7 @@ include("config/dbcon.php");
                         move_uploaded_file($tmp_img, "img/" . $imgname);
                         move_uploaded_file($tmp_pdf, "pdfs/" . $pdfname);
 
-                        $qry = "INSERT INTO pooja (poojatitle,poojaimg,pdesc,approxtime,benefit,poojareq) VALUES ('$title','$imgname','$desc','$time','$ben','$pdfname')";
+                        $qry = "INSERT INTO pooja (poojatitle,poojaimg,pdesc,approxtime,benefit,poojareq,pprice) VALUES ('$title','$imgname','$desc','$time','$ben','$pdfname','$price')";
                         $result = $con->query($qry);
                         if ($result) {
                             echo "<script type='text/javascript'>window.top.location='addpooja.php';</script>";
@@ -79,6 +80,10 @@ include("config/dbcon.php");
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form4Example2">Pooja Benefit</label>
                             <input type="text" id="summernote1" class="form-control" name="poben" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form4Example2">Pooja Price</label>
+                            <input type="text" id="summernote1" class="form-control" name="txtprice" />
                         </div>
                         <!-- chosse file -->
                         <div class="form-outline mb-4">

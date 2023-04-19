@@ -1,6 +1,7 @@
 <?php
-session_start();
+// session_start();
 include("includes/header.php");
+include("includes/navbar.php");
 include("admin/config/dbcon.php");
 $total = 0;
 if (isset($_SESSION['cart'])) {
@@ -12,12 +13,12 @@ if (isset($_SESSION['cart'])) {
 
 <body class="bg-light">
 
-    <div class="container mt-2" style="background-color: whitesmoke; border-radius: 10px; box-shadow:5px 10px 18px">
+    <div class="container mt-3 mb-3"
+        style="background-color: whitesmoke; border-radius: 10px; box-shadow:5px 10px 18px">
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
-                alt="" width="72" height="72">
+            <img class="d-block mx-auto mb-3" src="image\poojacom_new_logo-removebg-preview.png" alt="" width="400"
+                height="300">
             <h2>Checkout form</h2>
-
         </div>
 
         <div class="row">
@@ -33,7 +34,6 @@ if (isset($_SESSION['cart'])) {
                 <ul class="list-group mb-3">
                     <?php if (isset($_SESSION['cart'])):
                         foreach ($_SESSION['cart'] as $key => $value):
-
 
                             ?>
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -222,6 +222,6 @@ if (isset($_SESSION['cart'])) {
                     })
             })()
     </script>
-
-    <?php include("includes/scripts.php") ?>
+    <?php include("includes/footer.php"); ?>
+    <?php include("includes/scripts.php"); ?>
 </body>
