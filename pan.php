@@ -1,12 +1,12 @@
 <?php
 include("admin/config/dbcon.php");
 if (isset($_POST['pooja_id'])) {
-$qry="SELECT * FROM ((`poojapandit` INNER JOIN `pandit` ON poojapandit.pid=pandit.pid) 
+  $qry = "SELECT * FROM ((`poojapandit` INNER JOIN `pandit` ON poojapandit.pid=pandit.pid) 
 INNER JOIN `pooja` ON poojapandit.poojaid=pooja.poojaid) WHERE pooja.poojaid='$_POST[pooja_id]'";
-$result=$con->query($qry);
-$count=mysqli_num_rows($result);
-    // echo $_POST['pooja_id'];
-    $output = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+  $result = $con->query($qry);
+  $count = mysqli_num_rows($result);
+  // echo $_POST['pooja_id'];
+  $output = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
     <style>
     body{
         background:#f5f5f5;
@@ -204,41 +204,47 @@ $count=mysqli_num_rows($result);
                     <div class="col-lg-12 mx-auto">
                         <div class="career-search mb-60">
                             <div class="filter-result">
-                                <p class="mb-30 ff-montserrat">Total Job Openings : '."$count".'</p>
+                                <p class="mb-30 ff-montserrat">Total Job Openings : ' . "$count" . '</p>
                                 ';
-                                while($row=$result->fetch_assoc()){ 
-                                $output.='<div class="job-box d-md-flex align-items-center justify-content-between mb-30">
+  while ($row = $result->fetch_assoc()) {
+    $output .= '<div class="job-box d-md-flex align-items-center justify-content-between mb-30">
                                     <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
                                         <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                            <img src="image/'.$row["pimage"].'" height="65px" width="65px" />
+                                            <img src="image/' . $row["pimage"] . '" height="65px" width="65px" />
                                         </div>
                                         
                                         <div class="job-content">
-                                            <h5 class="text-center text-md-left">'."$row[fname] "."$row[lname]".'</h5>
+                                            <h5 class="text-center text-md-left">' . "$row[fname] " . "$row[lname]" . '</h5>
                                             <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
                                                 <li class="mr-md-4 location">
-                                                    <i class="zmdi zmdi-pin mr-2 sp"></i>'."$row[state]".' 
+                                                    <i class="zmdi zmdi-pin mr-2 sp"></i>' . "$row[state]" . ' 
                                                 </li>
                                                 <li class="mr-md-4 price">
-                                                Rs.'."$row[pprice]".'
+                                                Rs.' . "$row[pprice]" . '
                                                 </li>
                                                 
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="job-right my-4 flex-shrink-0">
-                                        <a href="form.php?id='.$row["pid"].'" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                    </div>
+                                    
+                                    <form action="booking.php" method="post">
+                                      <div class="job-right my-4 flex-shrink-0">
+                                        <button class="btn d-block w-100 d-sm-inline-block btn-light" name="submit" type="submit">Apply Now</button>    
+                                        <input type="hidden" name="txttitile" value="' . $row["poojatitle"] . '"/>    
+                                        <input type="hidden" name="txtname" value="' . $row["pid"].'"/>    
+                                      </div>
+                                    </form>
                                 </div>';
-    
-                                }
-                            $output.='</div>
+
+  }
+  $output .= '</div>
                         </div>
     
                         
                     </div>
                 </div>
                 ';
-    echo $output;
+  echo $output;
+  // <a href="booking.php?id='.$row["pid"].'" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
 }
 ?>

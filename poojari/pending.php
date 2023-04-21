@@ -1,8 +1,11 @@
 <?php
+session_start();
+$id=$_SESSION['auth_id1'];
+
 include("includes/header.php");
 include("config/dbcon.php");
 
-// ?>
+?>
 <div class="container-fluid px-4">
     <h1 class="mt-4">Pending Request</h1>
     <ol class="breadcrumb mb-4">
@@ -21,42 +24,45 @@ include("config/dbcon.php");
                     <table id="example" class="display responsive nowrap" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Pandit Name</th>
+                                <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone Number</th>
-                                <th>Status</th>
+                                <th>Address</th>
                                 <th>Accept/Reject</th>
                             </tr>
                         </thead>
                         <?php
-                        $qry = "select pid,fname,lname,email,phno,status from pandit where status='pending'";
+                        $qry = "SELECT * FROM `booking` WHERE STATUS='pending' AND poojari_name='$id'";
                         $result = $con->query($qry);
+                        // echo $result;
                         $count=mysqli_num_rows($result);
                         // echo $_SESSION['count'];
+                        
                         while ($row = $result->fetch_assoc()):
                             ?>
                             <tr>
                                 <td>
-                                    <?= $row['fname'] . ' ' . $row['lname']; ?>
+                                    <?= $row['name']; ?>
                                 </td>
                                 <td>
-                                    <?= $row['email'] ?>
+                                    <?= $row['email']; ?>
                                 </td>
                                 <td>
-                                    <?= $row['phno'] ?>
+                                    <?= $row['phno']; ?>
                                 </td>
                                 <td>
-                                    <?= $row['status'] ?>
+                                <?= $row['address']; ?>
                                 </td>
-                                <td>
-                                    <form action="pendingcode.php" method="post">
-                                        <input type="hidden" name="txtid" value="<?= $row['pid']; ?>">
-                                        <button type="input" class="btn btn-primary" name="txtaccept">Accept</button>
-                                        <button type="input" class="btn btn-danger" name="txtreject">Reject</button>
-                                    </form>
-                                </td>
+                                    <td>
+                                        <form action="pendingcode1.php" method="post">
+                                            <input type="hidden" name="txtid" value="<?= $row['bid']; ?>">
+                                            <button type="input" class="btn btn-primary" name="txtaccept">Accept</button>
+                                            <button type="input" class="btn btn-danger" name="txtreject">Reject</button>
+                                        </form>
+                                    </td>
                             </tr>
                         <?php endwhile; ?>
+                    
                     </table>
 
                 </div>
