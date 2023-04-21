@@ -187,6 +187,9 @@ $count=mysqli_num_rows($result);
         margin-right: 50px;
         margin-left: 50px;
     }
+    .sp{
+      margin-right: 10px;
+    }
     </style>
     <div class="container">
                 <div class="row">
@@ -211,20 +214,20 @@ $count=mysqli_num_rows($result);
                                         </div>
                                         
                                         <div class="job-content">
-                                            <h5 class="text-center text-md-left">'."$row[fname]".'</h5>
+                                            <h5 class="text-center text-md-left">'."$row[fname] "."$row[lname]".'</h5>
                                             <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
                                                 <li class="mr-md-4 location">
-                                                    <i class="zmdi zmdi-pin mr-2"></i>'."$row[state]".' 
+                                                    <i class="zmdi zmdi-pin mr-2 sp"></i>'."$row[state]".' 
                                                 </li>
                                                 <li class="mr-md-4 price">
-                                                    <i class="zmdi zmdi-money mr-2"></i> '."$row[pprice]".'
+                                                Rs.'."$row[pprice]".'
                                                 </li>
                                                 
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="job-right my-4 flex-shrink-0">
-                                        <a href="form.php?'.$row["pid"].'" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
+                                        <a href="form.php?id='.$row["pid"].'" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
                                     </div>
                                 </div>';
     
