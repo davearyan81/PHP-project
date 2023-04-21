@@ -64,13 +64,10 @@ if (isset($_GET['id'])) {
 
                                                     </div>
                                                     <div class="modal-body">
-
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
