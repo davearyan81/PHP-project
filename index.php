@@ -17,6 +17,9 @@ include('includes/navbar.php');
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="image\image1.webp" alt="First slide">
+            <!-- <video width="500" height="240" autoplay muted>
+                <source src="image/book.mp4" type="video/mp4">
+            </video> -->
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="image\image2.webp" alt="Second slide">
