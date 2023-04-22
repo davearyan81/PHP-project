@@ -75,7 +75,7 @@ include('includes/navbar.php');
 <?php include("main.php"); ?>
 
 <!-- ===========================================about us ================================================= -->
-<div class="container mb-5">
+<div class="container mb-5" id="aboutus">
     <div class="row align-items-center">
         <div class="col-lg-6 col-md-6 order-2 order-md-1 mt-4 pt-2 mt-sm-0 opt-sm-0">
             <div class="row align-items-center">
@@ -124,7 +124,7 @@ include('includes/navbar.php');
         <div class="col-lg-6 col-md-6 col-12 order-1 order-md-1" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
             data-aos-duration="2000">
             <div class="section-title ml-lg-5">
-                <h2 class="text-custom font-weight-normal mb-3 ">About Us</h2>
+                <h2 class="text-custom font-weight-normal mb-3">About Us</h2>
                 <h4 class="title mb-4">
                     Our mission is to <br />
                     make your life easier.
@@ -142,6 +142,14 @@ include('includes/navbar.php');
 </div>
 
 <!-- ====================================================================about us end ===================================== -->
+
+<a href="https://web.whatsapp.com/" class="float" target="_blank">
+    <i class="fa fa-whatsapp fa-x my-float"></i>
+</a>
+<?php
+include('includes/footer.php');
+include('includes/scripts.php');
+?>
 
 <a href="https://web.whatsapp.com/" class="float" target="_blank">
     <i class="fa fa-whatsapp fa-x my-float"></i>

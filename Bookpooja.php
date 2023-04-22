@@ -34,14 +34,11 @@ $result = $con->query($qry);
                                 <?= $row['pprice'] ?>/-
                             </h4>
                         </div>
-                        <h6 class="text-success">Free shipping</h6>
-
                         <div class="d-flex flex-column mt-4">
                             <a href="bookingdetails.php?id=<?= $row['poojaid'] ?>" class="btn btn-primary btn-sm"
                                 type="submit" name="order" style="background:#d12e11;">Order
                                 Now</a>
                         </div>
-
                     </div>
                 </div>
             <?php endwhile; ?>
