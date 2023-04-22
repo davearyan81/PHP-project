@@ -22,16 +22,9 @@
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                 <li>
                     <hr class="dropdown-divider" />
-<<<<<<< HEAD
-                </li>
-            </ul>
-        </li>
-    </ul>
-=======
                 <li><a class="dropdown-item" href="adminlogout.php">Log Out</a></li>
         </li>
     </ul>
     </li>
     </ul>
->>>>>>> f529766579ed643d90989927935a5e162b4fef7b
 </nav>

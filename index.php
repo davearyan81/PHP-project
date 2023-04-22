@@ -150,11 +150,3 @@ include('includes/navbar.php');
 include('includes/footer.php');
 include('includes/scripts.php');
 ?>
-
-<a href="https://web.whatsapp.com/" class="float" target="_blank">
-    <i class="fa fa-whatsapp fa-x my-float"></i>
-</a>
-<?php
-include('includes/footer.php');
-include('includes/scripts.php');
-?>
