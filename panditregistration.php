@@ -3,8 +3,8 @@ include("admin/config/dbcon.php");
 $qry = "select poojaid,poojatitle from pooja";
 $result = $con->query($qry);
 
-$qry1="select * from states";
-$result1=$con->query($qry1);
+$qry1 = "select * from states";
+$result1 = $con->query($qry1);
 ?>
 <section class="intro">
     <div class="mask d-flex align-items-center h-100 gradient-custom">
@@ -105,18 +105,19 @@ $result1=$con->query($qry1);
                                 <div class="row">
                                     <div class="col-md-6 mb-1">
 
-                                        <select class="form-select" id="states1"aria-label="Default select example"
+                                        <select class="form-select" id="states1" aria-label="Default select example"
                                             name="txtpstate1">
                                             <option selected>----States----</option>
-                                            <?php while($row=$result1->fetch_assoc()):?>
-                                            <option value="<?= $row['id'];?>"><?=$row['name'];?></option>
+                                            <?php while ($row = $result1->fetch_assoc()): ?>
+                                                <option value="<?= $row['id']; ?>"><?= $row['name']; ?></option>
                                             <?php endwhile; ?>
                                         </select>
 
                                     </div>
                                     <div class="col-md-6 mb-1">
 
-                                        <select class="form-select" id="city1" aria-label="Default select example" name="txtpcity1">
+                                        <select class="form-select" id="city1" aria-label="Default select example"
+                                            name="txtpcity1">
                                             <option value="">--Cities--</option>
                                         </select>
 

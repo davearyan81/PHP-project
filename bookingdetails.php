@@ -50,7 +50,6 @@ $row = $result->fetch_assoc();
     </style>
 </head>
 
-
 <body>
     <div class="container mt-5 mb-5">
         <div class="row d-flex justify-content-center">

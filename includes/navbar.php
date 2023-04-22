@@ -14,7 +14,7 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">About us</a>
+                    <a class="nav-link" href="#aboutus">About us</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -37,7 +37,7 @@
             <?php
             if (isset($_SESSION['auth_user'])):
                 ?>
-
+                <i class="fa fa-duotone fa-cart-shopping fa-2x mx-4  "></i>
                 <li class="nav-item dropdown" style="list-style:none;">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-mdb-toggle="dropdown" aria-expanded="false">
