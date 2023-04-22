@@ -1,3 +1,16 @@
+<?php
+$id=$_SESSION['auth_id1'];
+$con = mysqli_connect("localhost", "root", "", "dbproject");
+$qry = "select * from booking where status='pending' and poojari_name='$id'";
+$qry1 = "select * from booking where status='accept' and poojari_name='$id'";
+$qry2 = "select * from booking where status='reject' and poojari_name='$id'";
+$result = $con->query($qry);
+$result1 = $con->query($qry1);
+$result2 = $con->query($qry2);
+$count = mysqli_num_rows($result);
+$count1 = mysqli_num_rows($result1);
+$count2 = mysqli_num_rows($result2);
+?>
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
