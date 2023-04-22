@@ -1,0 +1,29 @@
+.intro {
+  height: 100%;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f4f2ef;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: -webkit-linear-gradient(
+    to bottom right,
+    rgba(250, 112, 154, 1),
+    rgba(254, 225, 64, 1) */
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(
+    to bottom right,
+    rgba(250, 112, 154, 1),
+    rgba(254, 225, 64, 1) */
+}
+
+h3 {
+  color: #6582b0;
+}
+
+input[type="submit"] {
+  background-color: #6582b0;
+  color: white;
+}
