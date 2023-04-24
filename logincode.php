@@ -18,31 +18,45 @@ if (isset($_POST['btnlogin'])) {
         }
         $_SESSION['auth'] = true;
         $_SESSION['auth_user'] = $fname . ' ' . $lname;
-
-        echo "<script type='text/javascript'>window.top.location='index.php';</script>";
-
     } else {
         $_SESSION['message'] = "Email or Password not match";
         header("location:login.php");
     }
 
 
-
-    if ($count1 > 0) {
-        while ($row = $result1->fetch_assoc()) {
-            $id = $row['pid'];
-            $fname1 = $row['fname'];
-            $lname1 = $row['lname'];
+    if ($count > 0) {
+        header("location:index.php");
+    } 
+    else {
+        if ($count1 > 0) {
+            while ($row = $result1->fetch_assoc()) {
+                $id = $row['pid'];
+                $fname1 = $row['fname'];
+                $lname1 = $row['lname'];
+            }
+            $_SESSION['auth1'] = true;
+            $_SESSION['auth_id1'] = $id;
+            $_SESSION['auth_user1'] = $fname1 . ' ' . $lname1;
+            header("location:poojari/index.php");
+            // echo "<script type='text/javascript'>window.top.location='admin/index.php';</script>";
+            // echo "pandit";
+        } else {
+            $_SESSION['message'] = "Your request has not been accepted by admin";
+            header("location:login.php");
         }
-        $_SESSION['auth1'] = true;
-        $_SESSION['auth_id1'] = $id;
-        $_SESSION['auth_user1'] = $fname1 . ' ' . $lname1;
-        header("location:poojari/index.php");
-        // echo "<script type='text/javascript'>window.top.location='admin/index.php';</script>";
-        // echo "pandit";
+    }
+}
+if (isset($_POST["btn"])) {
+
+    $username = $_POST["user"];
+    $password = $_POST["pass"];
+    $qry3 = "SELECT * FROM admin Where name='$username' and password='$password'";
+    $result3 = $con->query($qry3);
+    if (mysqli_num_rows($result3) > 0) {
+        $_SESSION['admin'] = true;
+        header("location:admin/index.php");
     } else {
-        $_SESSION['message'] = "Your request has not been accepted by admin";
-        header("location:login.php");
+        echo "failed";
     }
 }
 ?>

@@ -1,5 +1,7 @@
 <?php
-$id=$_SESSION['auth_id1'];
+if (isset($_SESSION['cart'])) {
+    $id = $_SESSION['auth_id1'];
+}
 $con = mysqli_connect("localhost", "root", "", "dbproject");
 $qry = "select * from booking where status='pending' and poojari_name='$id'";
 $qry1 = "select * from booking where status='accept' and poojari_name='$id'";
@@ -19,7 +21,7 @@ $count2 = mysqli_num_rows($result2);
                 <a class="nav-link" href="index.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
-                </a> 
+                </a>
                 <div class="sb-sidenav-menu-heading">Interface</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
                     aria-expanded="false" aria-controls="collapseLayouts">

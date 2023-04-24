@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login 07</title>
+    <title>Admin|Login</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -43,7 +43,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <form action="admincode.php" method="post" class="signin-form">
+                            <form action="logincode.php" method="post" class="signin-form">
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">Username</label>
                                     <input type="text" class="form-control" placeholder="Username" name="user"
