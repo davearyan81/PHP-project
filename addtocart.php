@@ -363,7 +363,14 @@
             <div class="column">
                 <form action="cart.php" method="post">
                     <button class="btn btn-round btn-outline-danger mt-3" name="clear" type="submit">clear cart</button>
-                    <a class="btn btn-round btn-success mt-3" href="checkout.php" role="button">Checkout</a>
+                    <?php 
+                        if(isset($_SESSION['auth'])):
+                    ?>
+                    <a class="btn btn-round btn-success mt-3 mr-2" href="checkout.php" role="button">Checkout</a>
+                    <?php
+                        else: echo"Pelase <a href='login.php' style='text-decoration:underline'>Login</a> To Checkout......";
+                    ?>
+                    <?php endif; ?>
                 </form>
                 <!-- <button class="" name="update" type="submit">Checkout</button> -->
                 <!-- <a class="btn btn-success"

@@ -4,5 +4,4 @@ if (isset($_SESSION['admin'])) {
     unset($_SESSION['admin']);
     header("location:../index.php");
 }
-echo "Aryan Dave";
 ?>
