@@ -2,7 +2,7 @@
 session_start();
 
 include("admin/config/dbcon.php");
-$qry = "select * from checkout";
+$qry = "SELECT * FROM `checkout`";
 $result = $con->query($qry);
 $row = $result->fetch_assoc();
 foreach ($_SESSION['cart'] as $key => $value) {

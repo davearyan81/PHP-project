@@ -140,12 +140,12 @@ include('includes/navbar.php');
         <div class="col-lg-6 col-md-6 col-12 order-1 order-md-1" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
             data-aos-duration="2000">
             <div class="section-title ml-lg-5">
-                <h2 class="text-custom font-weight-normal mb-3">About Us</h2>
+                <h2 class="text-custom font-weight-normal mb-3" style="color:red;">About Us</h2>
                 <h4 class="title mb-4">
                     Our mission is to <br />
                     make your life easier.
                 </h4>
-                <h2>Pooja.com<h2>
+                <h2 style="color:red">Pooja.com<h2>
                         <h4 class="text-muted mb-0">Brings you the best pooja experience with our best services
                             and make
                             your life more delight and joyfull. </h4>

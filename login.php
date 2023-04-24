@@ -43,7 +43,7 @@ include('includes/navbar.php');
                                                 <div class="col-12">
                                                     <div class="mt-2">
                                                         <input class=" btn btn-lg" type="submit" name="btnlogin"
-                                                            value="Submit" style="background: #d12e11;" />
+                                                            value="Login" style="background: #d12e11;" />
                                                     </div>
 
                                                 </div>

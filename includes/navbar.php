@@ -1,11 +1,4 @@
-<?php session_start();
-if (isset($_SESSION['cart'])) {
-    $count = count($_SESSION['cart']);
-}
-else{
-    $count=0;
-}
-?>
+<?php session_start(); ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
 
@@ -30,24 +23,18 @@ else{
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="categories.php">Pooja Items</a></li>
+
                         <li><a class="dropdown-item" href="Bookpooja.php">Book Pooja</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Book poojari</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link enabled" href="#" tabindex="-1" aria-disabled="true">Contact US</a>
+                    <a class="nav-link enabled" href="contactus.php" tabindex="-1" aria-disabled="true">Contact US</a>
                 </li>
             </ul>
             <?php
             if (isset($_SESSION['auth_user'])):
                 ?>
-                <a href="addtocart.php" class="mx-4"><i class="fa fa-duotone fa-cart-shopping"
-                        style="font-size:26px"></i><span class="badge rounded-pill badge-notification bg-danger">
-                        <?= $count; ?>
-                    </span></a>
+                <i class="fa fa-duotone fa-cart-shopping fa-2x mx-4  "></i>
                 <li class="nav-item dropdown" style="list-style:none;">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-mdb-toggle="dropdown" aria-expanded="false">

@@ -1,15 +1,21 @@
 .gradient-custom {
-    background: #FF416C;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #FF4B2B, #FF416C);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #FF4B2B, #FF416C);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #f1f0f0;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ff4b2b, #ff416c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #d5d1d0, #d0c4c7);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.btn-danger{
-    background: #FF416C;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.btn-danger {
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
