@@ -13,10 +13,12 @@ if (isset($_POST['btnlogin'])) {
 
     if ($count > 0) {
         while ($row = $result->fetch_assoc()) {
+            $uid=$row['uid'];
             $fname = $row['fname'];
             $lname = $row['lname'];
         }
         $_SESSION['auth'] = true;
+        $_SESSION['auth_id'] = $uid;
         $_SESSION['auth_user'] = $fname . ' ' . $lname;
     } else {
         $_SESSION['message'] = "Email or Password not match";
