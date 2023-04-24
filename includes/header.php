@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="assest/css/productpage.css">
     <link rel="stylesheet" href="assest/css/login.css">
     <link rel="stylesheet" href="assest/css/registration.css">
+    <link rel="stylesheet" href="assest\css\contactus.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />

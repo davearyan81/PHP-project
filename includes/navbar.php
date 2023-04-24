@@ -23,7 +23,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="categories.php">Pooja Items</a></li>
-                        <li><a class="dropdown-item" href="Bookpooja.php">Book Pooja</a></li>
+
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -31,7 +31,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link enabled" href="#" tabindex="-1" aria-disabled="true">Contact US</a>
+                    <a class="nav-link enabled" href="contactus.php" tabindex="-1" aria-disabled="true">Contact US</a>
                 </li>
             </ul>
             <?php
