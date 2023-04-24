@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $gen = $_POST['txtgen'];
     $email = $_POST['txtemail'];
     $pass = $_POST['txtpass'];
-    $conpass = $_POST['txtconpass'];
+
     $address = $_POST['txtaddress'];
     $state = $_POST['txtstate'];
     $city = $_POST['txtcity'];
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['message'] = "Email Already Exiist";
             echo "<script type='text/javascript'>window.top.location='userregistration.php';</script>";
         } else {
-            $qry = "INSERT INTO `user`(`fname`, `lname`, `dob`, `gender`,`email`, `password`, `conpassword`, `address`, `states`, `city`,`phnum`,`status`) VALUES ('$fname','$lname','$dob','$gen','$email','$pass','$conpass','$address','$state','$city','$phno','pending')";
+            $qry = "INSERT INTO `user`(`fname`, `lname`, `dob`, `gender`,`email`, `password`, `address`, `states`, `city`,`phnum`,`status`) VALUES ('$fname','$lname','$dob','$gen','$email','$pass','$address','$state','$city','$phno','pending')";
             $result1 = $con->query($qry);
             if ($result) {
                 $_SESSION['message'] = "Register Successfully";

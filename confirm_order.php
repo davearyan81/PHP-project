@@ -2,11 +2,10 @@
 session_start();
 
 include("admin/config/dbcon.php");
-$qry = "select * from checkout";
+$qry = "SELECT * FROM `checkout`";
 $result = $con->query($qry);
 $row = $result->fetch_assoc();
-if(isset($_POST['submit']))
-{
+if (isset($_POST['submit'])) {
   unset($_SESSION['cart']);
   header("location:index.php");
 }
@@ -39,7 +38,7 @@ if(isset($_POST['submit']))
                 <p class="lead fw-normal mb-0" style="color: #FF4B2B;">Your Order Confirmation</p>
               </div>
               <?php
-                $total = 0;
+              $total = 0;
               if (isset($_SESSION['cart'])) {
                 foreach ($_SESSION['cart'] as $key => $value):
                   $total += $value['price'] * $value['quantity'] ?>
@@ -69,8 +68,7 @@ if(isset($_POST['submit']))
                     </div>
                   </div>
                 <?php endforeach;
-              }else
-              {
+              } else {
                 header("location:index.php");
               } ?>
               <div class="d-flex justify-content-between pt-2">
