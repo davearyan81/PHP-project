@@ -22,23 +22,23 @@ include('includes/navbar.php');
       <!-- <img src="image\image1.webp" class="d-block w-100"
         alt="Sunset Over the City" /> -->
         <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
-                <source src="image/1.mp4" type="video/mp4">
-                
-            </video>
+            <source src="image/1.mp4" type="video/mp4">        
+        </video>
     </div>
 
     <!-- Single item -->
     <div class="carousel-item">
-      <img src="image\image2.webp" class="d-block w-100"
-        alt="Canyon at Nigh" />
-     
+      <!-- <img src="image\image2.webp" class="d-block w-100"
+        alt="Canyon at Nigh" /> -->
+        <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
+            <source src="image/2.mp4" type="video/mp4">
+        </video>
     </div>
 
     <!-- Single item -->
     <div class="carousel-item">
       <img src="image\image3.webp" class="d-block w-100"
         alt="Cliff Above a Stormy Sea" />
-      
     </div>
   </div>
   <!-- Inner -->
