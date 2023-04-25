@@ -7,51 +7,55 @@ include('includes/navbar.php');
 ?>
 <!-- Carousel wrapper -->
 <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-  <!-- Indicators -->
-  <div class="carousel-indicators">
-    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active" aria-current="true"
-      aria-label="Slide 1"></button>
-    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
 
-  <!-- Inner -->
-  <div class="carousel-inner rounded-5 shadow-4-strong">
-    <!-- Single item -->
-    <div class="carousel-item active">
-      <!-- <img src="image\image1.webp" class="d-block w-100"
+    <!-- Inner -->
+    <div class="carousel-inner rounded-5 shadow-4-strong">
+        <!-- Single item -->
+        <div class="carousel-item active">
+            <!-- <img src="image\image1.webp" class="d-block w-100"
         alt="Sunset Over the City" /> -->
-        <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
-            <source src="image/1.mp4" type="video/mp4">        
-        </video>
-    </div>
+            <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
+                <source src="image/1.mp4" type="video/mp4">
 
-    <!-- Single item -->
-    <div class="carousel-item">
-      <!-- <img src="image\image2.webp" class="d-block w-100"
-        alt="Canyon at Nigh" /> -->
-        <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
-            <source src="image/2.mp4" type="video/mp4">
-        </video>
-    </div>
+            </video>
+        </div>
 
-    <!-- Single item -->
-    <div class="carousel-item">
-      <img src="image\image3.webp" class="d-block w-100"
-        alt="Cliff Above a Stormy Sea" />
-    </div>
-  </div>
-  <!-- Inner -->
+        <!-- Single item -->
+        <div class="carousel-item">
+            <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
+                <source src="image/2.pooja.mp4" type="video/mp4">
 
-  <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+            </video>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+            <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
+                <source src="image/3.poojs.mp4" type="video/mp4">
+
+            </video>
+        </div>
+    </div>
+    <!-- Inner -->
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
 <!-- Carousel wrapper -->
 <div class="text-center">

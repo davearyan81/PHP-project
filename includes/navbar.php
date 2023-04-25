@@ -43,10 +43,10 @@
                     <!-- Dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#"></a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="profile.php">Profile</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider" />
