@@ -15,11 +15,13 @@ $result = $con->query($qry);
                     <div class="col-md-6 mt-5">
                         <h5>
                             <?= $row['poojatitle']; ?>
-
                         </h5>
                         <div class="d-flex flex-row">
-                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                    class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                            <?php if($row['rating']>="4.0"): ?>
+                            <div class="ratings mr-2"><h5><span class="badge badge-success"><img src="image/star.png" class="" height="10px" width="10px"></i><?= $row["rating"] ?></span></h5></div>
+                            <?php else :?>
+                            <div class="ratings mr-2"><h5><span class="badge badge-danger"><img src="image/star.png" class="" height="10px" width="10px"></i><?= $row["rating"] ?></span></h5></div>
+                                <?php endif; ?>
                         </div>
 
                         <div class="mt-1 mb-1 spec-1"><span>100% pure copper</span><span class="dot"></span><span>Light

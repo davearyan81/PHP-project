@@ -1,17 +1,18 @@
 <?php
-if (isset($_SESSION['cart'])) {
-    $id = $_SESSION['auth_id1'];
+include("config/dbcon.php");
+if(isset($_SESSION['auth1']))
+{
+    $id=$_SESSION['auth_id1'];
+    $qry="select * from booking where status='pending' and poojari_name='$id'";
+    $result=$con->query($qry);
+    $count=mysqli_num_rows($result);
+    $qry1="select * from booking where status='accept' and poojari_name='$id'";
+    $result1=$con->query($qry1);
+    $count1=mysqli_num_rows($result1);
+    $qry2="select * from booking where status='reject' and poojari_name='$id'";
+    $result2=$con->query($qry2);
+    $count2=mysqli_num_rows($result2);
 }
-$con = mysqli_connect("localhost", "root", "", "dbproject");
-$qry = "select * from booking where status='pending' and poojari_name='$id'";
-$qry1 = "select * from booking where status='accept' and poojari_name='$id'";
-$qry2 = "select * from booking where status='reject' and poojari_name='$id'";
-$result = $con->query($qry);
-$result1 = $con->query($qry1);
-$result2 = $con->query($qry2);
-$count = mysqli_num_rows($result);
-$count1 = mysqli_num_rows($result1);
-$count2 = mysqli_num_rows($result2);
 ?>
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -45,7 +46,7 @@ $count2 = mysqli_num_rows($result2);
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="pending.php">Pending Reques<span class="badge text-bg-primary mx-2">
+                        <a class="nav-link" href="pending.php">Pending Request<span class="badge text-bg-primary mx-2">
                                 <?= $count; ?>
                             </span></a>
                         <a class="nav-link" href="accept.php">Accepted Request<span class="badge text-bg-success mx-2">

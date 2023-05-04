@@ -20,7 +20,7 @@ include('includes/navbar.php');
     <!-- Inner -->
     <div class="carousel-inner rounded-5 shadow-4-strong">
         <!-- Single item -->
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-mdb-interval="4500">
             <!-- <img src="image\image1.webp" class="d-block w-100"
         alt="Sunset Over the City" /> -->
             <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
@@ -30,7 +30,7 @@ include('includes/navbar.php');
         </div>
 
         <!-- Single item -->
-        <div class="carousel-item">
+        <div class="carousel-item" data-mdb-interval="4500">
             <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
                 <source src="image/2.pooja.mp4" type="video/mp4">
 
@@ -38,7 +38,7 @@ include('includes/navbar.php');
         </div>
 
         <!-- Single item -->
-        <div class="carousel-item">
+        <div class="carousel-item" data-mdb-interval="4500">
             <video autoplay muted loop id="myVideo" class="d-block w-100 h-25">
                 <source src="image/3.poojs.mp4" type="video/mp4">
 
@@ -46,7 +46,7 @@ include('includes/navbar.php');
         </div>
     </div>
     <!-- Inner -->
-
+   
     <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

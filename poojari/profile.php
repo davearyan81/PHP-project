@@ -1,16 +1,17 @@
 <?php
+session_start();
 include("includes/header.php");
 include("includes/navbar.php");
-include("admin/config/dbcon.php");
-if (isset($_SESSION['auth'])) {
-    $id = $_SESSION['auth_id'];
-    $qry = "select * from user where uid='$id'";
+include("config/dbcon.php");
+if (isset($_SESSION['auth1'])) {
+    $id = $_SESSION['auth_id1'];
+    $qry = "select * from pandit where pid='$id'";
     $result = $con->query($qry);
     $row = $result->fetch_assoc();
 }
-else{
-    header("location:index.php");
-}
+// else{
+//     echo "<script>window.location.href='index.php'</script>";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,14 +97,14 @@ else{
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                    class="rounded-circle" width="150">
+                                <img src="<?= '../image/'.$row['pimage'] ?>" alt="Admin" class="rounded-circle"
+                                    width="150">
                                 <div class="mt-3">
                                     <h4>
-                                        <?= $row['fname'] . " " . $row['lname'] ?>
+                                        <?= $row['fname'] . ' ' . $row['lname'] ?>
                                     </h4>
                                     <p class="text-muted font-size-sm">
-                                        <?= $row['address'] ?>
+                                        <?= $row['state'] . ', ' . $row['city'] ?>
                                     </p>
                                     <button class="btn btn-danger">Follow</button>
                                     <button class="btn btn-outline-danger">Message</button>
@@ -190,7 +191,8 @@ else{
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" name="txtemail" value="<?= $row['email'] ?>">
+                                        <input type="text" class="form-control" name="txtemail"
+                                            value="<?= $row['email'] ?>">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -198,22 +200,32 @@ else{
                                         <h6 class="mb-0">Phone</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" name="txtphnum" value="<?= $row['phnum'] ?>">
+                                        <input type="text" class="form-control" name="txtphnum"
+                                            value="<?= $row['phno'] ?>">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Address</h6>
+                                        <h6 class="mb-0">State</h6>
+                                    </div>
+                                    <div class="col-sm-9 mb-3 text-secondary">
+                                        <input type="text" class="form-control" name="txtaddress"
+                                            value="<?= $row['state'] ?>">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">City</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" name="txtaddress" value="<?= $row['address'] ?>">
+                                        <input type="text" class="form-control" name="txtaddress"
+                                            value="<?= $row['city'] ?>">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
-                                        <button type="submit" class="btn btn-danger px-4" name="submit">Save Change</button>
+                                        <button type="submit" class="btn btn-danger px-4" name="submit">Save
+                                            Change</button>
                                     </div>
                                 </div>
                             </form>
@@ -236,14 +248,13 @@ else{
 </html>
 <?php
 if (isset($_POST["submit"])) {
-    $name = explode(" ",$_POST['txtname']);
-    $email=$_POST['txtemail'];
-    $ph=$_POST['txtphnum'];
-    $address=$_POST['txtaddress'];
-    $qry1="UPDATE user SET fname='$name[0]',lname='$name[1]',email='$email',phnum='$ph',address='$address' WHERE uid='$id'";
-    $result1=$con->query($qry1);
-    if($result1)
-    {
+    $name = explode(" ", $_POST['txtname']);
+    $email = $_POST['txtemail'];
+    $ph = $_POST['txtphnum'];
+    $address = $_POST['txtaddress'];
+    $qry1 = "UPDATE user SET fname='$name[0]',lname='$name[1]',email='$email',phnum='$ph',address='$address' WHERE uid='$id'";
+    $result1 = $con->query($qry1);
+    if ($result1) {
         echo "<script>window.location.href='profile.php'</script>";
     }
     // print_r($name[0]);

@@ -13,9 +13,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#aboutus">About us</a>
-                </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,6 +24,9 @@
 
                         <li><a class="dropdown-item" href="Bookpooja.php">Book Pooja</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#aboutus">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link enabled" href="contactus.php" tabindex="-1" aria-disabled="true">Contact US</a>
