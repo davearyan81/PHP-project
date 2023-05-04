@@ -1,7 +1,7 @@
 <?php
-if (isset($_SESSION['cart'])) {
-    $id = $_SESSION['auth_id1'];
-}
+
+$id = $_SESSION['auth_id1'];
+
 $con = mysqli_connect("localhost", "root", "", "dbproject");
 $qry = "select * from booking where status='pending' and poojari_name='$id'";
 $qry1 = "select * from booking where status='accept' and poojari_name='$id'";
