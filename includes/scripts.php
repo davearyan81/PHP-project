@@ -59,9 +59,11 @@
                     $('#city1').html(result1);
                 }
             });
-
         });
+
+    });
 </script>
+
 <!-- //   Dependent Cities and states -->
 
 
