@@ -125,7 +125,7 @@ if (isset($_SESSION['cart'])) {
                     </div>
 
                     <div class="mb-3">
-                        <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control email" id="email" placeholder="you@example.com"
                             required="">
                         <span id="emails" class="text-danger">

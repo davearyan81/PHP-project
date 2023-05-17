@@ -85,11 +85,15 @@ $row = $result->fetch_assoc();
                                                     <?= $row['pprice'] ?>
                                                 </strong></span><br><br>
                                 </div>
-
+                                <?php if(isset( $_SESSION['auth'])): ?>
                                 <button type="button" class="btn btn-color" id="modal" data-mdb-toggle="modal"
                                     data-mdb-target="#exampleModal" value="<?= $row['poojaid'] ?>">
-                                    Order Now
+                                    Book Now
                                 </button>
+                                <?php else: ?>
+            
+                                    <p>Please <a href="login.php" style="color:#f00">Login</a> to continue....</p>
+                                <?php endif; ?>
                             </div>
                             <div class="mt-5">
                                 <a class="btn text-white btn-lg btn-floating" style="background-color: #d12e11;; p-1"

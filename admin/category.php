@@ -3,7 +3,7 @@ include("includes/header.php");
 include("config/dbcon.php");
 ?>
 <div class="container-fluid px-4">
-    <h3>Pooja Service</h3>
+    <h3>Pooja Category</h3>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active"><a href="index.php" class="text-decoration-none"> Dashboard</a></li>
         <li class="breadcrumb-item ">Category</li>

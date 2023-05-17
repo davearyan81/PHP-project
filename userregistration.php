@@ -17,20 +17,21 @@ $result = $con->query($qry);
                         <div class="card-body p-3 p-md-4">
                             <h2 class="mb-3 pb-2">Registration Form</h2>
                             <?php include("poojari/message.php"); ?>
-                            <form action="userregistrtioncode.php" method="post">
+                            <form action="userregistrtioncode.php" class="needs-validation" method="post" novalidate>
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
                                         <div class="form-outline">
-                                            <input type="text" id="firstName" class="form-control" name="txtfname" />
+                                            <input type="text" id="firstName" class="form-control" name="txtfname" required />
                                             <label class="form-label" for="firstName">First Name</label>
                                         </div>
+                                        
                                     </div>
                                     <div class="col-md-6 mb-2">
                                         <div class="form-outline">
-                                            <input type="text" id="lastName" class="form-control" name="txtlname" />
+                                            <input type="text" id="lastName" class="form-control" name="txtlname" required />
                                             <label class="form-label" for="lastName">Last Name</label>
                                         </div>
-
+                                        
                                     </div>
                                 </div>
 
@@ -38,27 +39,27 @@ $result = $con->query($qry);
                                     <div class="col-md-6 mb-2">
 
                                         <div class="form-outline datepicker">
-                                            <input type="date" class="form-control" id="birthdayDate" name="txtdate" />
+                                            <input type="date" class="form-control" id="birthdayDate" name="txtdate" required />
                                             <label for="birthdayDate" class="form-label">Birthday</label>
                                         </div>
-
+                                        
                                     </div>
                                     <div class="col-md-6 mb-2">
 
                                         <h6 class="mb-2 pb-1">Gender: </h6>
 
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="txtgen" id="femaleGender"
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="radio" name="txtgen" id="femaleGender" 
                                                 value="Female" />
                                             <label class="form-check-label" for="femaleGender">Female</label>
                                         </div>
 
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="txtgen" id="maleGender"
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="radio" name="txtgen" id="maleGender" 
                                                 value="Male" />
                                             <label class="form-check-label" for="maleGender">Male</label>
                                         </div>
-
+                                        
 
                                     </div>
                                 </div>
@@ -67,11 +68,11 @@ $result = $con->query($qry);
                                     <div class="col-md-12 mb-2">
 
                                         <div class="form-outline">
-                                            <input type="email" id="emailAddress" name="txtemail"
+                                            <input type="email" id="emailAddress" name="txtemail" required
                                                 class="form-control" />
                                             <label class="form-label" for="emailAddress">Email</label>
                                         </div>
-
+                                        
                                     </div>
 
                                 </div>
@@ -80,29 +81,29 @@ $result = $con->query($qry);
                                     <div class="col-md-6 mb-2">
 
                                         <div class="form-outline">
-                                            <input type="password" id="password" name="txtpass" class="form-control" />
+                                            <input type="password" id="password" name="txtpass" class="form-control" required />
                                             <label class="form-label" for="password">Passwrod</label>
                                         </div>
-
+                                       
                                     </div>
                                     <div class="col-md-6 mb-2">
 
                                         <div class="form-outline">
-                                            <input type="password" id="conpassword" name="txtconpass"
+                                            <input type="password" id="conpassword" name="txtconpass" required
                                                 class="form-control" />
                                             <label class="form-label" for="conpassword">confirm password</label>
                                         </div>
-
+                                     
                                     </div>
                                 </div>
                                 <div class="form-outline mb-2">
-                                    <textarea class="form-control" id="address" name="txtaddress" rows="4"></textarea>
+                                    <textarea class="form-control" id="address" name="txtaddress" rows="4" required></textarea>
                                     <label class="form-label" for="address">Address</label>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
-                                        <select class="form-select" aria-label="Default select example" id="states"
+                                        <select class="form-select" aria-label="Default select example" id="states" required
                                             name="txtstate">
                                             <option selected>----States----</option>
                                             <?php
@@ -111,15 +112,16 @@ $result = $con->query($qry);
                                                 <option value="<?= $row['id']; ?>"><?= $row['name']; ?></option>
                                             <?php endwhile; ?>
                                         </select>
-
+                                        
                                     </div>
                                     <div class="col-md-6 mb-2">
 
-                                        <select class="form-select" aria-label="Default select example" id="city"
+                                        <select class="form-select" aria-label="Default select example" id="city" 
                                             name="txtcity">
-                                            <option selected>----City----</option>
+                                            <option >----City----</option>
                                         </select>
-
+                                        
+                                        
                                     </div>
                                 </div>
                                 <div class="row">
@@ -128,10 +130,14 @@ $result = $con->query($qry);
 
                                         <div class="input-group mb-3 form-outline mb-4">
                                             <span class="input-group-text" id="basic-addon1">+91</span>
-                                            <input type="tel" id="phonenumber" name="txtphone" class="form-control" />
+                                            <input type="tel" id="phonenumber" name="txtphone" class="form-control" required />
                                             <label class="form-label" for="phonenumber">Phone Number</label>
                                         </div>
-
+                                        <div class="invalid-feedback">
+                                            This Email field can't be Empty!!!!! </div>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                     </div>
 
                                 </div>
@@ -153,7 +159,28 @@ $result = $con->query($qry);
     </div>
 </section>
 
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
 
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
 <?php
 include('includes/scripts.php');
 ?>

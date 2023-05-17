@@ -30,7 +30,7 @@ include("admin/config/dbcon.php");
                 </div>
                 <div class="text-center">
                     <h1>Thank You !</h1>
-                    <p>Your Booking is Confirm..We Caontact You Soon </p>
+                    <p>Your Booking is Completed..We will Contact You Soon </p>
                     <!-- <button class="btn btn-outline-success">Back Home</button> -->
                     <!-- <button class="btn btn-success">Back Home</button> -->
                 </div>

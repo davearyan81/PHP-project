@@ -16,13 +16,13 @@ $result1=$con->query($qry1);
                         <div class="card-body p-4 p-md-5">
                             <h3 class="mb-2 pb-2">Registration Form For Poojari</h3>
                             <?php include("poojari/message.php"); ?>
-                            <form action="panditregistrationcode.php" method="post" enctype="multipart/form-data">
+                            <form action="panditregistrationcode.php" class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
 
                                 <div class="row">
                                     <div class="col-md-6 mb-1">
 
                                         <div class="form-outline">
-                                            <input type="text" id="firstName" class="form-control" name="txtpfname" />
+                                            <input type="text" id="firstName" class="form-control" name="txtpfname" required />
                                             <label class="form-label" for="firstName">First Name</label>
                                         </div>
 
@@ -30,7 +30,7 @@ $result1=$con->query($qry1);
                                     <div class="col-md-6 mb-1">
 
                                         <div class="form-outline">
-                                            <input type="text" id="lastName" class="form-control" name="txtplname" />
+                                            <input type="text" id="lastName" class="form-control" name="txtplname" required />
                                             <label class="form-label" for="lastName">Last Name</label>
                                         </div>
 
@@ -43,7 +43,7 @@ $result1=$con->query($qry1);
 
                                         <div class="form-outline">
                                             <input type="email" id="emailAddress" name="txtpemail"
-                                                class="form-control" />
+                                                class="form-control" required />
                                             <label class="form-label" for="emailAddress">Email</label>
                                         </div>
 
@@ -56,7 +56,7 @@ $result1=$con->query($qry1);
                                     <div class="col-md-6 mb-1">
 
                                         <div class="form-outline">
-                                            <input type="password" id="password" name="txtppass" class="form-control" />
+                                            <input type="password" id="password" name="txtppass" class="form-control" required />
                                             <label class="form-label" for="password">Passwrod</label>
                                         </div>
 
@@ -65,7 +65,7 @@ $result1=$con->query($qry1);
 
                                         <div class="form-outline">
                                             <input type="password" id="conpassword" name="txtpconpass"
-                                                class="form-control" />
+                                                class="form-control" required />
                                             <label class="form-label" for="conpassword">confirm password</label>
                                         </div>
 
@@ -73,7 +73,7 @@ $result1=$con->query($qry1);
                                 </div>
 
                                 <div class="form-outline mb-2">
-                                    <textarea class="form-control" id="address" name="txtpdetails" rows="4"></textarea>
+                                    <textarea class="form-control" id="address" name="txtpdetails" rows="4" required></textarea>
                                     <label class="form-label" for="address">Pandit Details</label>
                                 </div>
 
@@ -82,7 +82,7 @@ $result1=$con->query($qry1);
 
                                         <div class="form-outline input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">+91</span>
-                                            <input type="tel" id="phnumber" name="txtpphno" class="form-control" />
+                                            <input type="tel" id="phnumber" name="txtpphno" class="form-control" required />
                                             <label class="form-label" for="phnumber">Phone number</label>
                                         </div>
 
@@ -90,7 +90,7 @@ $result1=$con->query($qry1);
                                     <div class="col-md-6 mb-2">
 
                                         <div class="form-outline">
-                                            <input type="date" id="doj" name="txtpdoj" class="form-control" />
+                                            <input type="date" id="doj" name="txtpdoj" class="form-control" required />
                                             <label class="form-label" for="doj">Date of join</label>
                                         </div>
 
@@ -98,7 +98,7 @@ $result1=$con->query($qry1);
                                 </div>
 
                                 <div class="form-outline mb-1">
-                                    <textarea class="form-control" id="address" name="txtpaddress" rows="4"></textarea>
+                                    <textarea class="form-control" id="address" name="txtpaddress" required rows="4"></textarea>
                                     <label class="form-label" for="address">Address</label>
                                 </div>
 
@@ -130,7 +130,7 @@ $result1=$con->query($qry1);
 
                                         <label class="form-label" for="customFile">Pandit Image
                                         </label>
-                                        <input type="file" class="form-control" name="pimage" id="customFile" />
+                                        <input type="file" class="form-control" name="pimage" id="customFile" required />
 
                                     </div>
 
@@ -154,4 +154,26 @@ $result1=$con->query($qry1);
         </div>
     </div>
 </section>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script> required
 <?php include("includes/scripts.php"); ?>

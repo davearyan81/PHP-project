@@ -44,7 +44,7 @@
                     <!-- Dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="#"></a>
+                            <a class="dropdown-item" href="your_order.php">Your Order</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="profile.php">Profile</a>

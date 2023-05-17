@@ -3,13 +3,20 @@ include("includes/navbar.php");
 include("admin/config/dbcon.php");
 $pooja_name = "";
 $pandit_name = "";
+
 if (isset($_POST['submit'])) {
 	$pooja_name = $_POST['txttitile'];
 	$pandit_name = $_POST['txtname'];
 	$qry1 = "select * from pandit where pid='$pandit_name'";
 	$result1 = $con->query($qry1);
 	$row1 = $result1->fetch_assoc();
+	$qry2 = "SELECT * FROM ((`poojapandit` INNER JOIN `pandit` ON poojapandit.pid=pandit.pid) 
+	INNER JOIN `pooja` ON poojapandit.poojaid=pooja.poojaid) WHERE pooja.poojatitle='$pooja_name' AND pandit.pid='$pandit_name'";
+	$result2 = $con->query($qry2);
+	// echo $result2;
+	$row2 = $result2->fetch_assoc();
 }
+
 if (isset($_POST["btn-submit"])) {
 	$qry = "INSERT INTO `booking`(`name`, `email`, `pooja_name`, `poojari_name`, `phno`, `date`, `address`,`status`) VALUES ('$_POST[txtname]','$_POST[txtemail]','$_POST[txtpoojname]','$_POST[txtid]','$_POST[txtphno]','$_POST[txtdate]','$_POST[txtaddress]','pending')";
 	$result = $con->query($qry);
@@ -17,270 +24,276 @@ if (isset($_POST["btn-submit"])) {
 		$to = "harnilkadia99@gmail.com";
 		$sub = "booking";
 		$body = '<!DOCTYPE html>
-		<html
-		  lang="en"
-		  xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:o="urn:schemas-microsoft-com:office:office"
-		>
-		  <head>
-			<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width,initial-scale=1" />
-			<meta name="x-apple-disable-message-reformatting" />
-			<title></title>
+		<html>
+		<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style type="text/css">
 		
-			<style>
-			  table,
-			  td,
-			  div,
-			  h1,
-			  p {
-				font-family: Arial, sans-serif;
-			  }
-			</style>
-		  </head>
-		  <body style="margin: 0; padding: 0">
-			<table
-			  role="presentation"
-			  style="
-				width: 100%;
-				border-collapse: collapse;
-				border: 0;
-				border-spacing: 0;
-				background: #ffffff;
-			  "
-			>
-			  <tr>
-				<td align="center" style="padding: 0">
-				  <table
-					role="presentation"
-					style="
-					  width: 602px;
-					  border-collapse: collapse;
-					  border: 1px solid #cccccc;
-					  border-spacing: 0;
-					  text-align: left;
-					"
-				  >
+		body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+		table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+		img { -ms-interpolation-mode: bicubic; }
+		
+		img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+		table { border-collapse: collapse !important; }
+		body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+		
+		
+		a[x-apple-data-detectors] {
+			color: inherit !important;
+			text-decoration: none !important;
+			font-size: inherit !important;
+			font-family: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+		
+		@media screen and (max-width: 480px) {
+			.mobile-hide {
+				display: none !important;
+			}
+			.mobile-center {
+				text-align: center !important;
+			}
+		}
+		div[style*="margin: 16px 0;"] { margin: 0 !important; }
+		</style>
+		<body style="margin: 0 !important; padding: 0 !important; background-color: #eeeeee;" bgcolor="#eeeeee">
+		
+		
+		<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Open Sans, Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+		For what reason would it be advisable for me to think about business content? That might be little bit risky to have crew member like them. 
+		</div>
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td align="center" style="background-color: #eeeeee;" bgcolor="#eeeeee">
+				
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
 					<tr>
-					  <td
-						align="center"
-						style="padding: 20px 0 20px 0; background: #e2e7e8"
-					  >
-						<img
-						  src="poojacom_new_logo-removebg-preview.png"
-						  alt=""
-						  width="300"
-						  style="height: auto; display: block"
-						/>
-					  </td>
+						<td align="center" valign="top" style="font-size:0; padding: 35px;" bgcolor="#F44336">
+					   
+						<div style="display:inline-block; max-width:50%; min-width:100px; vertical-align:top; width:100%;">
+							<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;">
+								<tr>
+									<td align="left" valign="top" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 800; line-height: 48px;" class="mobile-center">
+										<h1 style="font-size: 36px; font-weight: 800; margin: 0; color: #ffffff;">Pooja.com</h1>
+									</td>
+								</tr>
+							</table>
+						</div>
+						
+						<div style="display:inline-block; max-width:50%; min-width:100px; vertical-align:top; width:100%;" class="mobile-hide">
+						</div>
+					  
+						</td>
 					</tr>
 					<tr>
-					  <td style="padding: 36px 30px 42px 30px">
-						<table
-						  role="presentation"
-						  style="
-							width: 100%;
-							border-collapse: collapse;
-							border: 0;
-							border-spacing: 0;
-						  "
-						>
-						  <tr>
-							<style>
-							  @import url("https://fonts.googleapis.com/css?family=Roboto:700");
-		
-							  body {
-								font-family: "Roboto";
-								background-color: #131417;
-							  }
-							  p {
-								text-shadow: 0 0 7px rgba(255, 255, 255, 0.3),
-								  0 0 3px rgba(255, 255, 255, 0.3);
-							  }
-		
-							  .animation {
-								height: 50px;
-								overflow: hidden;
-								margin-left: 1rem;
-							  }
-		
-							  .animation > div > div {
-								padding: 0.25rem 0.75rem;
-								height: 2.81rem;
-								margin-bottom: 2.81rem;
-								display: inline-block;
-							  }
-		
-							  .animation div:first-child {
-								animation: text-animation 8s infinite;
-							  }
-		
-							  .second div {
-								background-color: #cd921e;
-							  }
-							  .third div {
-								background-color: #c10528;
-							  }
-		
-							  @keyframes text-animation {
-								0% {
-								  margin-top: 0;
-								}
-								10% {
-								  margin-top: 0;
-								}
-								20% {
-								  margin-top: -5.62rem;
-								}
-								30% {
-								  margin-top: -5.62rem;
-								}
-								40% {
-								  margin-top: -11.24rem;
-								}
-								60% {
-								  margin-top: -11.24rem;
-								}
-								70% {
-								  margin-top: -5.62rem;
-								}
-								80% {
-								  margin-top: -5.62rem;
-								}
-								90% {
-								  margin-top: 0;
-								}
-								100% {
-								  margin-top: 0;
-								}
-							  }
-							</style>
-							<h1 style="color: white">
-							  <section class="animation">
-								<div class="third"><div>Pooja.Com</div></div>
-								<div class="third"><div>Pooja.Com</div></div>
-							  </section>
-							</h1>
-							<td style="padding: 0 0 36px 0; color: #153643">
-							  <p>Their is a request to perform a pooja By : </p>
-							  
+						<td align="center" style="padding: 35px 35px 20px 35px; background-color: #ffffff;" bgcolor="#ffffff">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+							<tr>
+								<td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
+									<img src="https://img.icons8.com/carbon-copy/100/000000/checked-checkbox.png" width="125" height="120" style="display: block; border: 0px;" /><br>
+									<h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;">
+										Thank You For Your Booking!
+									</h2>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 10px;">
+									<p style="font-size: 16px; font-weight: 400; line-height: 24px; color: #777777;">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium iste ipsa numquam odio dolores, nam.
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" style="padding-top: 20px;">
+									<table cellspacing="0" cellpadding="0" border="0" width="100%">
+										<tr>
+											<td width="75%" align="left" bgcolor="#eeeeee" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px;">
+												Booking Details #
+											</td>
+											<td width="25%" align="left" bgcolor="#eeeeee" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px;">
+												
+											</td>
+										</tr>
+										<tr>
+											<td width="75%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
+												Poojari Name
+											</td>
+											<td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
+											' . " $_POST[txtpname]" . '
+											</td>
+										</tr>
+										<tr>
+											<td width="75%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+												Pooja Name
+											</td>
+											<td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+												' . "$_POST[txtpoojname]" . '
+											</td>
+										</tr>
+										<tr>
+											<td width="75%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+												Date of Pooja
+											</td>
+											<td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+												' . "$_POST[txtdate]" . '
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+                                    <td align="left" style="padding-top: 20px;">
+                                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td width="75%" align="left" bgcolor="#eeeeee"
+                                                    style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px;">
+                                                    Price Details #
+                                                </td>
+                                                <td width="25%" align="left" bgcolor="#eeeeee"
+                                                    style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px;">
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="75%" align="left"
+                                                    style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
+                                                    Poojari Price
+                                                </td>
+                                                <td width="25%" align="left"
+                                                    style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
+                                                   ' . "$_POST[txtpprice]" . '
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="75%" align="left"
+                                                    style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+                                                    Pooja Price
+                                                </td>
+                                                <td width="25%" align="left"
+                                                    style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+                                                   ' . " $_POST[txtpoojaprice]" . '
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+
+							<tr>
+							<td align="left" style="padding-top: 20px;">
+								<table cellspacing="0" cellpadding="0" border="0" width="100%">
+									<tr>
+										<td width="75%" align="left"
+											style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px; border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;">
+											TOTAL
+										</td>
+										<td width="25%" align="left"
+											style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px; border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;">
+											'."$_POST[txtpprice]"+"$_POST[txtpoojaprice]".'
+										</td>
+									</tr>
+								</table>
 							</td>
-						  </tr>
-						  <tr>
-							<td style="padding: 0">
-							  <table
-								role="presentation"
-								style="
-								  width: 100%;
-								  border-collapse: collapse;
-								  border: 0;
-								  border-spacing: 0;
-								"
-							  >
-								<img src="" alt="" />
-								<tr>
-								  <td
-									style="
-									  width: 260px;
-									  padding: 0;
-									  vertical-align: top;
-									  color: #153643;
-									"
-								  >
+						</tr>
+
+						</table>
+						
+						</td>
+					</tr>
+					 <tr>
+						<td align="center" height="100%" valign="top" width="100%" style="padding: 0 35px 35px 35px; background-color: #ffffff;" bgcolor="#ffffff">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
+							<tr>
+								<td align="center" valign="top" style="font-size:0;">
+									<div style="display:inline-block; max-width:50%; min-width:240px; vertical-align:top; width:100%;">
+		
+										<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;">
+											<tr>
+												<td align="left" valign="top" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
+													<p style="font-weight: 800;">Address</p>
+													<p>' . "$_POST[txtaddress]" . '</p>
+		
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div
+                                            style="display:inline-block; max-width:50%; min-width:240px; vertical-align:top; width:100%;">
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="max-width:300px;">
+                                                <tr>
+                                                    <td align="left" valign="top"
+                                                        style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                                    
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+								</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					
+					<tr>
+					<td align="center" style="padding: 35px; background-color: #ffffff;" bgcolor="#ffffff">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+							style="max-width:600px;">
+							<tr>
+								<td align="center">
+									<img src="image/loginlogo.png" width="200" height="200"
+										style="display: block; border: 0px; position:relative;top:-20px" />
+								</td>
+							</tr>
+							<tr>
+								<td align="center"
+									style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 5px 0 10px 0;">
 									<p
-									  style="
-										margin: 0 0 25px 0;
-										font-size: 16px;
-										line-height: 24px;
-										font-family: Arial, sans-serif;
-									  "
-									></p>
-								  </td>
-								</tr>
-							  </table>
-							</td>
-						  </tr>
+										style="font-size: 14px; font-weight: 800; line-height: 18px; color: #333333;">
+										Raju Complex Gurukul Rd, Memnagar, <br>Ahmedabad, Gujarat 380052
+										
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td align="left"
+									style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 24px;">
+									<p
+										style="font-size: 14px; font-weight: 400; line-height: 20px; color: #777777;">
+										If you didnt create an account using this email address, please ignore this
+										email or <a href="#" target="_blank"
+											style="color: #777777;">unsusbscribe</a>.
+									</p>
+								</td>
+							</tr>
 						</table>
-					  </td>
-					</tr>
-					<tr>
-					  <td style="padding: 30px; background: #e2e7e8">
-						<table
-						  role="presentation"
-						  style="
-							width: 100%;
-							border-collapse: collapse;
-							border: 0;
-							border-spacing: 0;
-							font-size: 9px;
-							font-family: Arial, sans-serif;
-						  "
-						>
-						  <tr>
-							<td style="padding: 0; width: 50%" align="left">
-							  <p
-								style="
-								  margin: 0;
-								  font-size: 14px;
-								  line-height: 16px;
-								  font-family: Arial, sans-serif;
-								  color: #df6969;
-								"
-							  >
-								&reg; Someone, Somewhere 2021<br /><a
-								  href="http://www.example.com"
-								  style="color: #df4f4f; text-decoration: underline"
-								  >Unsubscribe</a
-								>
-							  </p>
-							</td>
-							<td style="padding: 0; width: 50%" align="right">
-							  <table
-								role="presentation"
-								style="
-								  border-collapse: collapse;
-								  border: 0;
-								  border-spacing: 0;
-								"
-							  >
-								<tr>
-								  <td style="padding: 0 0 0 10px; width: 38px">
-									<a
-									  href="http://www.twitter.com/"
-									  style="color: #c55656"
-									  ><img
-										src="https://assets.codepen.io/210284/tw_1.png"
-										alt="Twitter"
-										width="38"
-										style="height: auto; display: block; border: 0"
-									/></a>
-								  </td>
-								  <td style="padding: 0 0 0 10px; width: 38px">
-									<a
-									  href="http://www.facebook.com/"
-									  style="color: #ffffff"
-									  ><img
-										src="https://assets.codepen.io/210284/fb_1.png"
-										alt="Facebook"
-										width="38"
-										style="height: auto; display: block; border: 0"
-									/></a>
-								  </td>
-								</tr>
-							  </table>
-							</td>
-						  </tr>
-						</table>
-					  </td>
-					</tr>
-				  </table>
+					</td>
+				</tr>
+
+				</table>
 				</td>
-			  </tr>
-			</table>
-		  </body>
+			</tr>
+		</table>
+			
+		</body>
 		</html>
+		
 		';
-		header("location:thankyou.php");
+		$header = array(
+			'From' => 'harnilkadia99@gmail.com',
+			'MIME-Versio' => '1.0',
+			'Content-type' => 'text/html; charset=iso-8859-1'
+		);
+		if (mail($to, $sub, $body, $header)) {
+			header("location:thankyou.php");
+		} else {
+			echo "failed";
+		}
 	}
 }
 ?>
@@ -356,6 +369,9 @@ if (isset($_POST["btn-submit"])) {
 												<input class="form-control" type="text" name="txtpname"
 													value="<?= $row1['fname'] . ' ' . $row1['lname'] ?>" />
 												<input type="hidden" name="txtid" value="<?= $pandit_name ?>">
+												<input type="hidden" name="txtpprice" value="<?= $row2["price"] ?>">
+												<input type="hidden" name="txtpoojaprice"
+													value="<?= $row2["pprice"] ?>">
 											</div>
 										</div>
 									</div>

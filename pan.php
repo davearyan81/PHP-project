@@ -231,7 +231,7 @@ INNER JOIN `pooja` ON poojapandit.poojaid=pooja.poojaid) WHERE pooja.poojaid='$_
                                       <div class="job-right my-4 flex-shrink-0">
                                         <button class="btn d-block w-100 d-sm-inline-block btn-light" name="submit" type="submit">Apply Now</button>    
                                         <input type="hidden" name="txttitile" value="' . $row["poojatitle"] . '"/>    
-                                        <input type="hidden" name="txtname" value="' . $row["pid"].'"/>    
+                                        <input type="hidden" name="txtname" value="' . $row["pid"] . '"/>    
                                       </div>
                                     </form>
                                 </div>';

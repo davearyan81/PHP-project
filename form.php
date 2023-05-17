@@ -16,7 +16,7 @@ if (isset($_POST['orderid'])) {
     $result=$con->query($qry);
     
     
-}
+} 
 if(isset($_POST['payment_id']) && isset($_POST['orderid']))
 {
     $status=$_POST['status'];

@@ -10,6 +10,7 @@ foreach ($_SESSION['cart'] as $key => $value) {
   $name = $value['name'];
   $price = $value['price'];
   $qty = $value['quantity'];
+  echo $value["image"]; 
   if (isset($_POST['submit'])) {
   
     $uid = $_SESSION['auth_id'];

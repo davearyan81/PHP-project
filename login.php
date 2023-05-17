@@ -21,22 +21,33 @@ include('includes/navbar.php');
                                 <div class="col-md-5 d-flex align-items-center">
                                     <div class="card-body py-5 px-4 p-md-5">
 
-                                        <form action="logincode.php" method="post">
+                                        <form action="logincode.php" class="needs-validation" method="post" novalidate>
                                             <h4 class="fw-bold mb-4" style="color:  #d12e11;">Log in into your account
                                             </h4>
                                             <p class="mb-4" style="color: #45526e;">To log in, please fill in these
                                                 text fiels with your e-mail address and password.</p>
 
-                                            <div class="form-outline mb-4">
+                                            <div class="form-outline mb-5">
                                                 <input type="email" name="txtemail" id="form2Example1"
-                                                    class="form-control" />
+                                                    class="form-control" required />
                                                 <label class="form-label" for="form2Example1">Email address</label>
+                                                <div class="invalid-feedback">
+                                                    This Email field can't be Empty!!!!!                                                </div>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
                                             </div>
 
-                                            <div class="form-outline mb-4">
+                                            <div class="form-outline mb-4 mt-2">
                                                 <input type="password" id="form2Example2" name="txtpass"
-                                                    class="form-control" />
+                                                    class="form-control" required />
                                                 <label class="form-label" for="form2Example2">Password</label>
+                                                <div class="invalid-feedback">
+                                                    This password field can't be Empty!!!!!
+                                                </div>
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
                                             </div>
 
                                             <div class="row">
@@ -63,6 +74,28 @@ include('includes/navbar.php');
         </div>
     </div>
 </section>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
 <?php
 include('includes/scripts.php');
 ?>
