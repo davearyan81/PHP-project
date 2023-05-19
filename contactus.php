@@ -3,7 +3,7 @@ include("includes/header.php");
 include("includes/navbar.php");
 if (isset($_POST['btnsubmit'])) {
 
-  $to = "salesforcearyan@gmail.com";
+  $to = "harnilkadia99@gmail.com";
   $sub = "Contact Us";
   $body = '<!DOCTYPE html>
     <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -163,7 +163,7 @@ if (isset($_POST['btnsubmit'])) {
     
     </html>';
   $header = array(
-    'From' => 'davearyan81@gmail.com',
+    'From' => 'harnilkadia99@gmail.com',
     'MIME-Versio' => '1.0',
     'Content-type' => 'text/html; charset=iso-8859-1'
   );

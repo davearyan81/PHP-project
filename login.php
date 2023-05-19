@@ -32,7 +32,7 @@ include('includes/navbar.php');
                                                     class="form-control" required />
                                                 <label class="form-label" for="form2Example1">Email address</label>
                                                 <div class="invalid-feedback">
-                                                    This Email field can't be Empty!!!!!                                                </div>
+                                                    This Email field can't be Empty!!!!! </div>
                                                 <div class="valid-feedback">
                                                     Looks good!
                                                 </div>
@@ -60,7 +60,8 @@ include('includes/navbar.php');
                                                 </div>
                                             </div>
                                             <hr>
-                                            <a class="link float-end" href="#!">Forgot password</a><br>
+                                            <a class="link float-end" href="#!" data-mdb-toggle="modal"
+                                                data-mdb-target="#exampleModal">Forgot password</a><br>
                                             <a class="link float-end" href="userregistration.php">Signup As User</a><br>
                                             <a class="link float-end" href="panditregistration.php">Signup As Pojari</a>
                                         </form>
@@ -74,27 +75,49 @@ include('includes/navbar.php');
         </div>
     </div>
 </section>
+<div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-mdb-backdrop="true" data-mdb-keyboard="true">
+    <div class="modal-dialog" style="width: 300px;">
+        <div class="modal-content text-center">
+            <div class="modal-header h5 text-white bg-danger justify-content-center">
+                Password Reset
+            </div>
+            <div class="modal-body px-5">
+                <p class="py-2">
+                    Enter your email address and we'll send you an email with instructions to reset your password.
+                </p>
+                <form action="forget.php" method="post">
+                    <div class="form-outline">
+                        <input type="email" id="typeEmail" name="txtemail" class="form-control my-3" />
+                        <label class="form-label" for="typeEmail">Email input</label>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100" name="btnsubmit">Reset password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
+    (function () {
+        'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
 </script>
 <?php
 include('includes/scripts.php');

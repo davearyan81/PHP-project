@@ -1,13 +1,19 @@
 <?php
 session_start();
+if(!isset($_SESSION['admin'])){
+    header("location:../adminloginpage.php");
+}
 include("includes/header.php");
 include("config/dbcon.php");
 $qry = "select * from pandit where status='pending'";
 $qry1 = "select * from pandit where status='accept'";
+$qry2 = "select * from pandit where status='reject'";
 $result = $con->query($qry);
 $result1 = $con->query($qry1);
+$result2 = $con->query($qry2);
 $count = mysqli_num_rows($result);
 $count1 = mysqli_num_rows($result1);
+$count2 = mysqli_num_rows($result2);
 ?>
 
 <div class="container-fluid px-4">
@@ -42,16 +48,17 @@ $count1 = mysqli_num_rows($result1);
                         <?= $count1; ?>
                     </span></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <a class="small text-white stretched-link" href="accept.php">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-danger text-white mb-4">
-                <div class="card-body">Danger Card</div>
+                <div class="card-body">Rejected Card<span class="badge badge-dark">
+                        <?= $count2; ?></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <a class="small text-white stretched-link" href="reject.php">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
